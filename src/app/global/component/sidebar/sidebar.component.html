@@ -1,0 +1,15 @@
+<nav  class="sidebar-nav">
+  <ul class="nav">
+      <li class="nav-item">
+          <a class="nav-link " routerLink="dashboard" routerLinkActive="active">
+            <i class="nav-icon icon-speedometer"></i> Dashboard
+          </a>
+      </li>
+      <li class="nav-item" *ngIf="isAdmin">
+        <a class="nav-link " routerLink="user" routerLinkActive="active">
+          <i class="nav-icon icon-speedometer"></i> User
+        </a>
+      </li>
+       
+  </ul>
+</nav>

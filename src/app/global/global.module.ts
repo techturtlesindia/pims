@@ -1,0 +1,62 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './component/header/header.component';
+import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { LoginComponent } from './component/login/login.component';
+import { ContainerComponent } from './component/container/container.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component';
+import { Routes, RouterModule } from '@angular/router';
+import { BrandMinimizeDirective } from './directive/brand-minimize.directive';
+import { MobileSidebarToggleDirective } from './directive/mobile-sidebar-toggle.directive';
+import { NavDropdownToggleDirective } from './directive/nav-dropdown-toggle.directive';
+import { NavDropdownDirective } from './directive/nav-dropdown.directive';
+import { SidebarMinimizeDirective } from './directive/sidebar-minimize.directive';
+import { SidebarOffCanvasCloseDirective } from './directive/sidebar-off-canvas-close.directive';
+import { SidebarToggleDirective } from './directive/sidebar-toggle.directive';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './component/user/user.component';
+import { HomeComponent } from './component/home/home.component';
+const routes: Routes = [];
+@NgModule({
+  declarations: [
+    HeaderComponent, 
+    SidebarComponent, 
+    LoginComponent, 
+    ContainerComponent, 
+    DashboardComponent, 
+    BreadcrumbComponent,
+    BrandMinimizeDirective,
+    MobileSidebarToggleDirective,
+    NavDropdownToggleDirective,
+    NavDropdownDirective,
+    SidebarMinimizeDirective,
+    SidebarOffCanvasCloseDirective,
+    SidebarToggleDirective,
+    UserComponent,
+    HomeComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    RouterModule.forChild(routes),
+  ], exports:[
+    HeaderComponent,
+    SidebarComponent,
+    LoginComponent,
+    ContainerComponent,
+    HttpClientModule,
+    DashboardComponent,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ]
+})
+export class GlobalModule { }
