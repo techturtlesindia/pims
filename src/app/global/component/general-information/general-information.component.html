@@ -1,0 +1,523 @@
+<div class="animated fadeIn">
+  <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>General Information</strong> 
+          </div>
+          <div class="card-body">
+            <form [formGroup]="generalInformationForm" method="post" class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="govt_id">Govt Id</label>
+                            <div class="col-md-9">
+                                <input formControlName="govt_id" type="text" class="form-control" name="gov_id" placeholder="Govt Id(English)">
+                                <div *ngFor="let validation of validationMessages.govt_id">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'govt_id', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="profilepic">Photo Upload</label>
+                          <div class="col-md-9">
+                            <input formControlName="profilepic" type="file" name="profilepic">
+                          </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="name_english">Name (English)</label>
+                        <div class="col-md-9">
+                            <input formControlName="name_english" type="text" class="form-control" name="name_english" placeholder="Name(English)">
+                            <div *ngFor="let validation of validationMessages.name_english">
+                                <span class="help-block" *ngIf="hasValidationError(validation, 'name_english', generalInformationForm)" >{{validation.message}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="name_bangla">Name (Bangla)</label>
+                        <div class="col-md-9">
+                            <input formControlName="name_bangla" type="text" class="form-control" name="name_bangla" placeholder="Name(Bangla)">
+                            <div *ngFor="let validation of validationMessages.name_bangla">
+                                <span class="help-block" *ngIf="hasValidationError(validation, 'name_bangla', generalInformationForm)" >{{validation.message}}</span>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="fathername_english">Father's Name(English)</label>
+                        <div class="col-md-9">
+                            <input formControlName="fathername_english" type="text" class="form-control" name="fathername_english" placeholder="Father's Name(English)">
+                            <div *ngFor="let validation of validationMessages.fathername_english">
+                                <span class="help-block" *ngIf="hasValidationError(validation, 'fathername_english', generalInformationForm)" >{{validation.message}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="fathername_bangla">Father's Name(Bangla)</label>
+                        <div class="col-md-9">
+                            <input formControlName="fathername_bangla" type="text" class="form-control" name="fathername_bangla" placeholder="Father's Name(Bangla)">
+                            <div *ngFor="let validation of validationMessages.fathername_bangla">
+                                <span class="help-block" *ngIf="hasValidationError(validation, 'fathername_bangla', generalInformationForm)" >{{validation.message}}</span>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="mothername_english">Mother's Name(English)</label>
+                        <div class="col-md-9">
+                            <input formControlName="mothername_english" type="text" class="form-control" name="mothername_english" placeholder="Mother's Name(English)">
+                            <div *ngFor="let validation of validationMessages.mothername_english">
+                                <span class="help-block" *ngIf="hasValidationError(validation, 'mothername_english', generalInformationForm)" >{{validation.message}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="mothername_bangla">Mother's Name(Bangla)</label>
+                        <div class="col-md-9">
+                            <input formControlName="mothername_bangla" type="text" class="form-control" name="mothername_bangla" placeholder="Mother's Name(Bangla)">
+                            <div *ngFor="let validation of validationMessages.mothername_bangla">
+                                <span class="help-block" *ngIf="hasValidationError(validation, 'mothername_bangla', generalInformationForm)" >{{validation.message}}</span>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="dateofbirth">Date of Birth</label>
+                        <div class="col-md-9">
+                            <input formControlName="date_of_birth" class="form-control" type="date" name="dateofbirth" placeholder="date">
+                            <div *ngFor="let validation of validationMessages.date_of_birth">
+                                <span class="help-block" *ngIf="hasValidationError(validation, 'date_of_birth', generalInformationForm)" >{{validation.message}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                        <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="sex">Sex</label>
+                                <div class="col-md-9">
+                                    <select formControlName="sex" name="sex" class="form-control">
+                                        <option value="0">Select Sex</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+                                      </select>
+                                      <div *ngFor="let validation of validationMessages.sex">
+                                        <span class="help-block" *ngIf="hasValidationError(validation, 'sex', generalInformationForm)" >{{validation.message}}</span>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                            <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="prefix_name">Prefix Name</label>
+                                    <div class="col-md-9">
+                                        <select formControlName="prefix_name" name="prefix_name" class="form-control">
+                                            <option value="0">Select Prefix Name</option>
+                                            <option value="Prefix Name1">Prefix Name 1</option>
+                                            <option value="Prefix Name2">Prefix Name 2</option>
+                                          </select>
+                                          <div *ngFor="let validation of validationMessages.prefix_name">
+                                            <span class="help-block" *ngIf="hasValidationError(validation, 'prefix_name', generalInformationForm)" >{{validation.message}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                            <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="suffix_name">Suffix Name</label>
+                                    <div class="col-md-9">
+                                        <select formControlName="suffix_name" name="suffix_name" class="form-control">
+                                            <option value="0">Select Suffix Name</option>
+                                            <option value="Suffix Name1">Suffix Name 1</option>
+                                            <option value="Suffix Name2">Suffix Name 2</option>
+                                            <option value="Suffix Name3">Suffix Name 3</option>
+                                          </select>
+                                          <div *ngFor="let validation of validationMessages.suffix_name">
+                                            <span class="help-block" *ngIf="hasValidationError(validation, 'suffix_name', generalInformationForm)" >{{validation.message}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                            <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="marital_status">Marital Status</label>
+                                    <div class="col-md-9">
+                                        <select formControlName="marital_status" name="marital_status" class="form-control">
+                                            <option value="0">Select Marital Status</option>
+                                            <option value="Unmarried">Unmarried</option>
+                                            <option value="Married">Married</option>
+                                            <option value="Seprate">Seprate</option>
+                                            <option value="Divorce">Divorce</option>
+                                          </select>
+                                          <div *ngFor="let validation of validationMessages.marital_status">
+                                            <span class="help-block" *ngIf="hasValidationError(validation, 'marital_status', generalInformationForm)" >{{validation.message}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="home_district">Home District</label>
+                            <div class="col-md-9">
+                                <select formControlName="home_district" name="home_district" class="form-control">
+                                    <option value="0">Select Home District</option>
+                                    <option value="Home District1">Home District 1</option>
+                                    <option value="Home District2">Home District 2</option>
+                                  </select>
+                                  <div *ngFor="let validation of validationMessages.home_district">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'home_district', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="religion">Religion</label>
+                            <div class="col-md-9">
+                                <select formControlName="religion" name="religion" class="form-control">
+                                    <option value="0">Select Religion</option>
+                                    <option value="Hindu">Hindu</option>
+                                    <option value="Muslim">Muslim</option>
+                                    <option value="Sikh">Sikh</option>
+                                    <option value="Christan">Christan</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                                <div *ngFor="let validation of validationMessages.religion">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'religion', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="rank">Rank</label>
+                            <div class="col-md-9">
+                                <input formControlName="rank" type="text" class="form-control" name="rank" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.rank">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'rank', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="designation">Designation</label>
+                            <div class="col-md-9">
+                                <input formControlName="designation" type="text" class="form-control" name="designation" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.designation">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'designation', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="location">Location</label>
+                            <div class="col-md-9">
+                                <input formControlName="location" type="text" class="form-control" name="location" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.location">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'location', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="organization">Organization</label>
+                            <div class="col-md-9">
+                                <input formControlName="organization" type="text" class="form-control" name="organization" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.organization">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'organization', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="orderorjoin_type">Order/Join Type</label>
+                            <div class="col-md-9">
+                                <select formControlName="orderorjoin_type" name="orderorjoin_type" class="form-control">
+                                    <option value="0">Select Order/Join Type</option>
+                                    <option value="Order/Join Type1">Order/Join Type1</option>
+                                    <option value="Order/Join Type2">Order/Join Type2</option>
+                                    <option value="Order/Join Type3">Order/Join Type3</option>
+                                </select>
+                                <div *ngFor="let validation of validationMessages.orderorjoin_type">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'orderorjoin_type', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="oorj_date">O/J Date</label>
+                            <div class="col-md-9">
+                                <input formControlName="oorj_date" type="date" class="form-control" name="oorj_date" placeholder="date">
+                                <div *ngFor="let validation of validationMessages.oorj_date">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'oorj_date', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="freedom_fighter">Freedom Fighter</label>
+                            <div class="col-md-3">
+                                <select formControlName="freedom_fighter" name="freedom_fighter" class="form-control">
+                                    <option value="0">Yes/No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <div *ngFor="let validation of validationMessages.freedom_fighter">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'freedom_fighter', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input formControlName="freedom_fighterifyes" type="text" class="form-control" name="freedom_fighterifyes" readonly placeholder="if yes">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="prl_date">PRL Date</label>
+                            <div class="col-md-9">
+                                <input formControlName="prl_date" type="text" class="form-control" name="prl_date" readonly placeholder="Label">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="noofspouse">No. of Spouse</label>
+                            <div class="col-md-9">
+                                <input formControlName="noofspouse" type="text" class="form-control" name="noofspouse" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.noofspouse">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'noofspouse', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="batch">Batch</label>
+                            <div class="col-md-9">
+                                <select formControlName="batch" name="batch" class="form-control">
+                                    <option value="0">Select Batch</option>
+                                    <option value="Batch1">Batch1</option>
+                                    <option value="Batch2">Batch2</option>
+                                </select>
+                                <div *ngFor="let validation of validationMessages.batch">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'batch', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="confirmation_godate">Confirmation GO Date</label>
+                            <div class="col-md-9">
+                                <input formControlName="confirmation_godate" type="date" class="form-control" name="confirmation_godate" placeholder="date">
+                                <div *ngFor="let validation of validationMessages.confirmation_godate">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'confirmation_godate', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="expire_date">Expire Date</label>
+                            <div class="col-md-9">
+                                <input formControlName="expire_date" type="date" class="form-control" name="expire_date" placeholder="date">
+                                <div *ngFor="let validation of validationMessages.expire_date">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'expire_date', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="national_seniority">National Seniority</label>
+                            <div class="col-md-9">
+                                <input formControlName="national_seniority" type="text" class="form-control" name="national_seniority" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.national_seniority">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'national_seniority', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="status">Status</label>
+                            <div class="col-md-9">
+                                <input formControlName="status" type="text" class="form-control" name="status" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.status">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'status', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="promote">Promote</label>
+                                <div class="col-md-9">
+                                    <select formControlName="promote" name="promote" class="form-control">
+                                        <option value="0">Select Promote</option>
+                                        <option value="Batch1">Batch1</option>
+                                        <option value="Batch2">Batch2</option>
+                                    </select>
+                                    <div *ngFor="let validation of validationMessages.promote">
+                                        <span class="help-block" *ngIf="hasValidationError(validation, 'promote', generalInformationForm)" >{{validation.message}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="codre">Codre</label>
+                            <div class="col-md-9">
+                                <input formControlName="codre" type="text" class="form-control" name="codre" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.codre">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'codre', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="codre_date">Codre Date</label>
+                            <div class="col-md-9">
+                                <input formControlName="codre_date" type="text" class="form-control" name="codre_date" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.codre_date">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'codre_date', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="activity_status">Activity Status</label>
+                            <div class="col-md-9">
+                                <select formControlName="activity_status" name="activity_status" class="form-control">
+                                    <option value="0">Select Activity Status</option>
+                                   <option value="Activity Status1">Activity Status 1</option>
+                                   <option value="Activity Status2">Activity Status 2</option>
+                                   <option value="Activity Status3">Activity Status 3</option>
+                                </select>
+                                <div *ngFor="let validation of validationMessages.activity_status">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'activity_status', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="placement">Placement</label>
+                            <div class="col-md-9">
+                                <select formControlName="placement" name="placement" class="form-control">
+                                    <option value="0">Select Placement</option>
+                                    <option value="Placement1">Placement 1</option>
+                                    <option value="Placement2">Placement 2</option>
+                                    <option value="Placement3">Placement 3</option>
+                                </select>
+                                <div *ngFor="let validation of validationMessages.placement">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'placement', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="code">Code</label>
+                            <div class="col-md-9">
+                                <input formControlName="code" type="text" class="form-control" name="code" readonly placeholder="Label">
+                                <div *ngFor="let validation of validationMessages.code">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'code', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="additional_personalinfo">Additional Personal Info</label>
+                            <div class="col-md-9">
+                                <textarea formControlName="additional_personalinfo" name="additional_personalinfo" rows="3" class="form-control" placeholder="Content.."></textarea>
+                                <div *ngFor="let validation of validationMessages.additional_personalinfo">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'additional_personalinfo', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="remarks">Remarks</label>
+                            <div class="col-md-9">
+                                <textarea formControlName="additional_personalinfo" name="remarks" rows="3" class="form-control" placeholder="Content.."></textarea>
+                                <div *ngFor="let validation of validationMessages.remarks">
+                                    <span class="help-block" *ngIf="hasValidationError(validation, 'remarks', generalInformationForm)" >{{validation.message}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </form>
+          </div>
+          <div class="card-footer">   
+            <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            <button type="submit" class="btn btn-sm btn-primary" style="margin-left:900px;" (click)="saveGeneralInformation(generalInformationForm)"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          </div>
+        </div>
+         </div><!--/.col-->
+    </div><!--/.row-->
+  </div>

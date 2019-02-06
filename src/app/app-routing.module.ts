@@ -6,6 +6,7 @@ import { DashboardComponent } from './global/component/dashboard/dashboard.compo
 import { AuthGuardService } from './global/guard/auth-guard.service';
 import { Role } from './global/models/Role';
 import { UserComponent } from './global/component/user/user.component';
+import { GeneralInformationComponent } from './global/component/general-information/general-information.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:'full' },
@@ -24,7 +25,14 @@ const routes: Routes = [
         breadcrumb: "User",
        roles: [Role.Admin]
       } 
-    }
+    }, { path: 'general', 
+    component: GeneralInformationComponent, 
+    canActivate: [AuthGuardService],
+    data: {
+      breadcrumb: "General Information",
+     roles: [Role.Admin]
+    } 
+  }
   ]},
   { path: 'user', component: ContainerComponent, children:[
     { path: 'dashboard', 

@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './component/user/user.component';
 import { HomeComponent } from './component/home/home.component';
+import { GeneralInformationComponent } from './component/general-information/general-information.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ const routes: Routes = [];
     SidebarOffCanvasCloseDirective,
     SidebarToggleDirective,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    GeneralInformationComponent
   ],
   imports: [
     CommonModule,
@@ -56,6 +58,7 @@ const routes: Routes = [];
     DashboardComponent,
     BrowserAnimationsModule,
     FormsModule,
+    GeneralInformationComponent,
     ReactiveFormsModule,
   ]
 })
