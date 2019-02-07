@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './component/user/user.component';
 import { HomeComponent } from './component/home/home.component';
 import { GeneralInformationComponent } from './component/general-information/general-information.component';
+import { DocumentsComponent } from './component/documents/documents.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ const routes: Routes = [];
     SidebarToggleDirective,
     UserComponent,
     HomeComponent,
-    GeneralInformationComponent
+    GeneralInformationComponent,
+    DocumentsComponent
   ],
   imports: [
     CommonModule,

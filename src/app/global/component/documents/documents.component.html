@@ -1,0 +1,203 @@
+<div class="animated fadeIn">
+  <form [formGroup]="documentForm" method="post" class="form-horizontal">
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Document Attachment Information</strong>
+          </div>
+          <div class="card-body">
+            <strong>Document Information</strong>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Document No</label>
+                  <div class="col-md-9">
+                    <input formControlName="document_no" class="form-control" id="document_no" name="document_no" type="text" placeholder="Enter Document No">
+                    <div *ngFor="let validation of validationMessages.document_no">
+                      <span class="help-block" *ngIf="hasValidationError(validation, 'document_no', documentForm)" >{{validation.message}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Document Date</label>
+                  <div class="col-md-9">
+                    <input formControlName="document_date" class="form-control" id="document_date" name="document_date" type="text" placeholder="Enter Document Date">
+                    <div *ngFor="let validation of validationMessages.document_date">
+                      <span class="help-block" *ngIf="hasValidationError(validation, 'document_date', documentForm)" >{{validation.message}}</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Document Type</label>
+                  <div class="col-md-9">
+                    <select formControlName="document_type" class="form-control" id="document_type" name="document_type">
+                      <option selected="selected">Select Document Type</option>
+                    </select>
+                    <div *ngFor="let validation of validationMessages.document_type">
+                      <span class="help-block" *ngIf="hasValidationError(validation, 'document_type', documentForm)" >{{validation.message}}</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Document Sub Type</label>
+                  <div class="col-md-9">
+                    <select formControlName="document_sub_type" class="form-control" id="document_sub_type" name="document_sub_type">
+                      <option selected="selected">Select Document Type</option>
+                    </select>
+                    <div *ngFor="let validation of validationMessages.document_sub_type">
+                      <span class="help-block" *ngIf="hasValidationError(validation, 'document_sub_type', documentForm)" >{{validation.message}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Attachment</label>
+                  <div class="col-md-9">
+                    <input formControlName="filepictureFileName" class="form-control" id="documnentfile" name="documnentfile" type="file">
+                    <div *ngFor="let validation of validationMessages.filepictureFileName">
+                      <span class="help-block" *ngIf="hasValidationError(validation, 'filepictureFileName', documentForm)" >{{validation.message}}</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Government IDs with comma separated</label>
+                  <div class="col-md-9">
+                    <input formControlName="government_ids" class="form-control" id="government_ids" name="government_ids" type="text" placeholder="Enter Document IDs">
+                    <div *ngFor="let validation of validationMessages.government_ids">
+                      <span class="help-block" *ngIf="hasValidationError(validation, 'government_ids', documentForm)" >{{validation.message}}</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Remarks </label>
+                  <div class="col-md-9">
+                    <input formControlName="remarks" class="form-control" id="remarks" name="remarks" type="text" placeholder="Enter Remarks">
+                    <div *ngFor="let validation of validationMessages.remarks">
+                      <span class="help-block" *ngIf="hasValidationError(validation, 'remarks', documentForm)" >{{validation.message}}</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!documentForm.valid" (click)="saveDocuments(documentForm)">
+              <i class="fa fa-dot-circle-o"></i> Save
+            </button>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
+                  <thead>
+                    <tr role="row">
+                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 150px;">Document No</th>
+                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 130px;">Document Date</th>
+                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">Document Type</th>
+                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Sub Type</th>
+                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Employee IDs</th>
+                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Attachment</th>
+                      <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 180px;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row" class="odd">
+                      <td>32354445</td>
+                      <td>2012/01/21</td>
+                      <td>
+                        <span class="badge badge-success">Active</span>
+                      </td>
+                      <td>
+                        <span class="badge badge-success">Active</span>
+                      </td>
+                      <td>
+                        234567866
+                      </td>
+                      <td>
+                        <img src="" />
+                      </td>
+                      <td>
+                        <a class="btn btn-success" href="#">
+                          <i class="fa fa-search-plus"></i>
+                        </a>
+                        <a class="btn btn-info" href="#">
+                          <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger" href="#">
+                          <i class="fa fa-trash-o"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-5">
+                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 32 entries</div>
+              </div>
+              <div class="col-sm-12 col-md-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                  <ul class="pagination">
+                    <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                    <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                    <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">Next</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+
+</div>
