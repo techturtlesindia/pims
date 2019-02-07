@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './component/header/header.component';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { SidebarComponent, AppSidebarNavItemComponent, AppSidebarNavLinkComponent, AppSidebarNavDropdownComponent, AppSidebarNavTitleComponent } from './component/sidebar/sidebar.component';
 import { LoginComponent } from './component/login/login.component';
 import { ContainerComponent } from './component/container/container.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -41,7 +41,11 @@ const routes: Routes = [];
     UserComponent,
     HomeComponent,
     GeneralInformationComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    AppSidebarNavItemComponent,
+    AppSidebarNavLinkComponent,
+    AppSidebarNavDropdownComponent,
+    AppSidebarNavTitleComponent
   ],
   imports: [
     CommonModule,
@@ -62,6 +66,11 @@ const routes: Routes = [];
     FormsModule,
     GeneralInformationComponent,
     ReactiveFormsModule,
+    AppSidebarNavItemComponent,
+    AppSidebarNavLinkComponent,
+    AppSidebarNavDropdownComponent,
+    AppSidebarNavTitleComponent
+
   ]
 })
 export class GlobalModule { }

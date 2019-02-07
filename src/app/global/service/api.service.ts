@@ -46,6 +46,10 @@ export class ApiService {
     });
   }
 
+  public async loadNavItems() {
+    return await this.http.get("../assets/navItems.json");
+  }
+
   logout() {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(undefined);

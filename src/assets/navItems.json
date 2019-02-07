@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Dashboard",
+      "url": "dashboard",
+      "icon": "icon-speedometer"
+    }, {
+      "name": "User Management",
+      "url": "user",
+      "icon": "icon-user",
+      "children": [
+        {
+          "name": "User",
+          "url": "user",
+          "icon": "icon-user"
+        }
+      ]
+    }, {
+      "name": "General Information",
+      "url": "general",
+      "icon": "icon-notebook"
+    }, {
+        "name": "Documents",
+        "url": "documents",
+        "icon": "icon-notebook"
+      }
+]
