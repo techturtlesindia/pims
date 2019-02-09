@@ -59,7 +59,16 @@ export class ApiService {
   public async loadNavItems() {
     var url = this.apiUrl + "common/menu/list/" + this.currentUserValue.authorities[0].authority;
     return await this.http.post(url, "");
-    //return await this.http.get("../assets/navItems.json");
+  }
+
+  public async getManus(pageNo: any, size: any) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "common/menu/call/" + pageNo + "/" + size;
+    return await this.http.get(url, {
+      headers: headers
+    })
   }
 
   public async saveManu(menu: Menu) {
