@@ -45,6 +45,7 @@
                       <button class="btn btn-link px-0">Forgot password?</button>
                     </div>
                   </div>
+                   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
                 </form>
               </div>
             </div>

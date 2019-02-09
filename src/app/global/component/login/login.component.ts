@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { first } from 'rxjs/operators';
+
 import { ApiService } from '../../service/api.service';
 import { User } from '../../models/User';
 import { Role } from '../../models/Role';
@@ -19,6 +21,7 @@ export interface ILogin {
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   validationMessages: any;
+  error = '';
   loginModel:ILogin = {
     username:"",
     password:""
@@ -67,20 +70,39 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem("rememberme");
       }
       console.log(this.loginModel);
-      let result = await this.api.authenticationLogin(this.loginModel);
-      let currentUser:User = this.api.currentUserValue;
-      if (currentUser) {
-        let role;
-        if(currentUser.authorities.length != 0) {
-          role = currentUser.authorities[0];
-        }
-        if (role.authority == Role.Admin) {
+
+
+      this.api.authenticationLogin(this.loginModel)
+      //.pipe(first())
+      .subscribe(
+          data => {
             this.router.navigate(['/admin/dashboard']);
-        }else{
-            this.router.navigate(['/user/dashboard']);
-        }
+          },
+          error => {
+            console.log(error);
+            console.log(error.error.message);
+            this.error = "Invalid Credentials"
+            //  this.loading = false;
+          });
+
+
+      // let result = await this.api.authenticationLogin(this.loginModel);
+      // let currentUser:User = this.api.currentUserValue;
+      // if (currentUser) {
+      //   let role;
+      //   if(currentUser.authorities.length != 0) {
+      //     role = currentUser.authorities[0];
+      //   }
+      //   if (role.authority == Role.Admin) {
+      //       this.router.navigate(['/admin/dashboard']);
+      //   }else{
+      //       this.router.navigate(['/user/dashboard']);
+      //   }
         
-      }
+      // }
+
+
+
     }
   }
 }
