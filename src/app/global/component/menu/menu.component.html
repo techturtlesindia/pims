@@ -1,3 +1,5 @@
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 <div class="animated fadeIn">
   <form [formGroup]="menuForm" method="post" class="form-horizontal">
     <div class="row">
@@ -172,7 +174,7 @@
                         <a class="btn btn-info" (click)="editRow(item)">
                           <i class="fa fa-edit"></i>
                         </a>
-                        <a class="btn btn-danger">
+                        <a class="btn btn-danger" (click)="deleteRow(item)">
                           <i class="fa fa-trash-o"></i>
                         </a>
                       </td>
