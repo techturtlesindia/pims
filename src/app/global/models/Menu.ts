@@ -1,10 +1,10 @@
 export class Menu {
-    "name": number;
+    "name": string;
     "url": string;
     "icon": string;
     "childmenu": number;
     "isactive": string;
     "rolename": string;
     "enterby": string;
-    "isparent": number;
+    "isparent": string;
 }

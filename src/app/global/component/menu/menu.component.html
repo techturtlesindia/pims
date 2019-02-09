@@ -160,19 +160,19 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr role="row" class="odd">
-                      <td>Dashboard</td>
-                      <td>dashboard</td>
-                      <td>icon-speedometer</td>
-                      <td>ROLE_ADMIN</td>
+                    <tr role="row" [ngClass]="i % 2 == 0 ? 'even':'odd'" *ngFor="let item of menus;let i = index">
+                      <td>{{item.name}}</td>
+                      <td>{{item.url}}</td>
+                      <td>{{item.icon}}</td>
+                      <td>{{item.rolename}}</td>
                       <td>
-                        <a class="btn btn-success" href="#">
+                        <a class="btn btn-success">
                           <i class="fa fa-search-plus"></i>
                         </a>
-                        <a class="btn btn-info" href="#">
+                        <a class="btn btn-info" (click)="editRow(item)">
                           <i class="fa fa-edit"></i>
                         </a>
-                        <a class="btn btn-danger" href="#">
+                        <a class="btn btn-danger">
                           <i class="fa fa-trash-o"></i>
                         </a>
                       </td>
