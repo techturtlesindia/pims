@@ -27,6 +27,8 @@ import { MenuComponent } from './component/menu/menu.component';
 import { NotfoundComponent } from './component/notfound/notfound.component';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ const routes: Routes = [];
     BsDropdownModule.forRoot(),
     RouterModule.forChild(routes),
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    MultiSelectModule,
+    ScrollingModule
   ], exports: [
     ToastModule,
     HeaderComponent,
@@ -80,7 +84,9 @@ const routes: Routes = [];
     AppSidebarNavLinkComponent,
     AppSidebarNavDropdownComponent,
     AppSidebarNavTitleComponent,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    MultiSelectModule,
+    ScrollingModule
   ], providers: [
     {
       provide: HTTP_INTERCEPTORS,

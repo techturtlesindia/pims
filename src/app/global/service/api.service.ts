@@ -3,10 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from '../models/User';
 import { Menu } from '../models/Menu';
+import { Users } from '../models/Users';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
 
 
   private currentUserSubject: BehaviorSubject<User>;
@@ -80,6 +82,15 @@ export class ApiService {
     })
   }
 
+  public async deleteUser(row: Users) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "common/menu/delete";
+    return await this.http.post(url, row, {
+      headers: headers
+    })
+  }
 
   logout() {
     localStorage.removeItem('currentUser');
