@@ -25,29 +25,28 @@ import { Role } from '../../models/Role';
 export class SidebarComponent implements OnInit {
 
   currentUser: User;
-  navItems:any;
+  navItems: any;
   constructor(
-      private router: Router,
-      private authenticationService: ApiService
+    private router: Router,
+    private authenticationService: ApiService
   ) {
-      this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   get isAdmin() {
-    if(this.currentUser.authorities.length != 0) {
+    if (this.currentUser.authorities.length != 0) {
       return this.currentUser && this.currentUser.authorities[0].authority === Role.Admin;
     }
   }
 
   async ngOnInit() {
-   this.loadMenu();
+    this.loadMenu();
   }
 
   async loadMenu() {
-    await this.authenticationService.loadNavItems().then(value=>{
-      value.subscribe(result=>{
-       this.navItems = result;
-       console.log(this.navItems);
+    await this.authenticationService.loadNavItems().then(value => {
+      value.subscribe(result => {
+        this.navItems = result;
       })
     })
   }
@@ -97,7 +96,7 @@ export class AppSidebarNavItemComponent {
     return this.router.isActive(this.thisUrl(), false);
   }
 
-  constructor( private router: Router )  { }
+  constructor(private router: Router) { }
 
 }
 
@@ -195,12 +194,12 @@ export class AppSidebarNavTitleComponent implements OnInit {
 
     this.renderer.addClass(li, 'nav-title');
 
-    if ( this.title.class ) {
+    if (this.title.class) {
       const classes = this.title.class;
       this.renderer.addClass(li, classes);
     }
 
-    if ( this.title.wrapper ) {
+    if (this.title.wrapper) {
       const wrapper = this.renderer.createElement(this.title.wrapper.element);
 
       this.renderer.appendChild(wrapper, name);

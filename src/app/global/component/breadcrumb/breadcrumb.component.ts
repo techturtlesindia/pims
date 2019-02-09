@@ -24,13 +24,12 @@ export class BreadcrumbComponent implements OnInit {
     this.breadcrumbs = [];
   }
 
- 
+
   ngOnInit() {
     const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
       let root: ActivatedRoute = this.activatedRoute.root;
       this.breadcrumbs = this.getBreadcrumbs(root);
-      console.log("breadcrumbs : " + this.breadcrumbs);
     });
   }
 
@@ -39,12 +38,11 @@ export class BreadcrumbComponent implements OnInit {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
       let root: ActivatedRoute = this.activatedRoute.root;
       this.breadcrumbs = this.getBreadcrumbs(root);
-      console.log("breadcrumbs : " + this.breadcrumbs);
     });
   }
 
-  
-  private getBreadcrumbs(route: ActivatedRoute, url: string="", breadcrumbs: IBreadcrumb[]=[]): IBreadcrumb[] {
+
+  private getBreadcrumbs(route: ActivatedRoute, url: string = "", breadcrumbs: IBreadcrumb[] = []): IBreadcrumb[] {
     const ROUTE_DATA_BREADCRUMB: string = "breadcrumb";
     let children: ActivatedRoute[] = route.children;
     if (children.length === 0) {
@@ -70,7 +68,6 @@ export class BreadcrumbComponent implements OnInit {
   }
 
   getCurrentRoute() {
-    console.log("current route : " +this.router.url);
     return "Dashboard";
   }
 
