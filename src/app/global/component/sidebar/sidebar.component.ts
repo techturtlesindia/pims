@@ -85,7 +85,7 @@ export class AppSidebarNavItemComponent {
   }
 
   public isDropdown() {
-    return this.item.children ? true : false;
+    return this.item.childmenu.length != 0 ? true : false;
   }
 
   public thisUrl() {
@@ -158,7 +158,7 @@ export class AppSidebarNavLinkComponent {
       <span *ngIf="isBadge()" [ngClass]="'badge badge-' + link.badge.variant">{{ link.badge.text }}</span>
     </a>
     <ul class="nav-dropdown-items">
-      <ng-template ngFor let-child [ngForOf]="link.children">
+      <ng-template ngFor let-child [ngForOf]="link.childmenu">
         <app-sidebar-nav-item [item]='child'></app-sidebar-nav-item>
       </ng-template>
     </ul>
