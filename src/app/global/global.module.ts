@@ -25,6 +25,10 @@ import { DocumentsComponent } from './component/documents/documents.component';
 import { TokenInterceptor } from './service/token-interceptor';
 import { MenuComponent } from './component/menu/menu.component';
 import { NotfoundComponent } from './component/notfound/notfound.component';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -60,7 +64,12 @@ const routes: Routes = [];
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forChild(routes),
+    ToastModule,
+    ConfirmDialogModule,
+    MultiSelectModule,
+    ScrollingModule
   ], exports: [
+    ToastModule,
     HeaderComponent,
     SidebarComponent,
     LoginComponent,
@@ -74,8 +83,10 @@ const routes: Routes = [];
     AppSidebarNavItemComponent,
     AppSidebarNavLinkComponent,
     AppSidebarNavDropdownComponent,
-    AppSidebarNavTitleComponent
-
+    AppSidebarNavTitleComponent,
+    ConfirmDialogModule,
+    MultiSelectModule,
+    ScrollingModule
   ], providers: [
     {
       provide: HTTP_INTERCEPTORS,

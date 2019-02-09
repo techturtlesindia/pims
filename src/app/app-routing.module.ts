@@ -9,6 +9,7 @@ import { UserComponent } from './global/component/user/user.component';
 import { GeneralInformationComponent } from './global/component/general-information/general-information.component';
 import { DocumentsComponent } from './global/component/documents/documents.component';
 import { NotfoundComponent } from './global/component/notfound/notfound.component';
+import { MenuComponent } from './global/component/menu/menu.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -44,6 +45,14 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
         data: {
           breadcrumb: "Documents",
+          roles: [Role.Admin]
+        }
+      }, {
+        path: 'menu',
+        component: MenuComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Menu",
           roles: [Role.Admin]
         }
       }, {
