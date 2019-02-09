@@ -17,19 +17,21 @@ import { SidebarToggleDirective } from './directive/sidebar-toggle.directive';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserComponent } from './component/user/user.component';
 import { HomeComponent } from './component/home/home.component';
 import { GeneralInformationComponent } from './component/general-information/general-information.component';
 import { DocumentsComponent } from './component/documents/documents.component';
+import { TokenInterceptor } from './service/token-interceptor';
+import { MenuComponent } from './component/menu/menu.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
-    HeaderComponent, 
-    SidebarComponent, 
-    LoginComponent, 
-    ContainerComponent, 
-    DashboardComponent, 
+    HeaderComponent,
+    SidebarComponent,
+    LoginComponent,
+    ContainerComponent,
+    DashboardComponent,
     BreadcrumbComponent,
     BrandMinimizeDirective,
     MobileSidebarToggleDirective,
@@ -45,7 +47,8 @@ const routes: Routes = [];
     AppSidebarNavItemComponent,
     AppSidebarNavLinkComponent,
     AppSidebarNavDropdownComponent,
-    AppSidebarNavTitleComponent
+    AppSidebarNavTitleComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +58,7 @@ const routes: Routes = [];
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forChild(routes),
-  ], exports:[
+  ], exports: [
     HeaderComponent,
     SidebarComponent,
     LoginComponent,
@@ -71,6 +74,12 @@ const routes: Routes = [];
     AppSidebarNavDropdownComponent,
     AppSidebarNavTitleComponent
 
+  ], providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ]
 })
 export class GlobalModule { }

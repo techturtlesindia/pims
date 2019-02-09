@@ -6,52 +6,60 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class ApiService {
+
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
+  getToken(): any {
+    if (this.currentUserSubject != undefined && this.currentUserSubject.value != undefined) {
+      return this.currentUserSubject.value.accessToken;
+    }
+  }
   apiUrl: string = "http://34.211.99.182/api/";
-  constructor(public http: HttpClient) { 
-    if(localStorage.getItem('currentUser') != undefined) {
+  constructor(public http: HttpClient) {
+    if (localStorage.getItem('currentUser') != undefined) {
       this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(atob(localStorage.getItem('currentUser'))));
       this.currentUser = this.currentUserSubject.asObservable();
-    }else{
+    } else {
       this.currentUserSubject = new BehaviorSubject<User>(undefined);
       this.currentUser = this.currentUserSubject.asObservable();
     }
   }
 
   public get currentUserValue(): User {
-    if(this.currentUserSubject != undefined) {
+    if (this.currentUserSubject != undefined) {
       return this.currentUserSubject.value;
     }
   }
 
-  public async authenticationLogin(data:any) {
+  public async authenticationLogin(data: any) {
     var headers = new HttpHeaders({
-      'Content-Type':  'application/json'
+      'Content-Type': 'application/json'
     })
-    var url = this.apiUrl+"auth/signin";
+    var url = this.apiUrl + "auth/signin";
     console.log(url);
-    return await this.http.post(url,data,{
-      headers:headers
-    }).subscribe((user:User)=>{
+    return await this.http.post(url, data, {
+      headers: headers
+    }).subscribe((user: User) => {
       if (user && user.accessToken) {
         localStorage.setItem('currentUser', btoa(JSON.stringify(user)));
         this.currentUserSubject.next(user);
       }
       return user;
-    }, (error)=>{
+    }, (error) => {
       console.log(error);
       return null;
     });
   }
 
   public async loadNavItems() {
+    /*var url = this.apiUrl + "common/menu/list/" + this.currentUserValue.authorities[0].authority;
+    return await this.http.post(url, "");*/
     return await this.http.get("../assets/navItems.json");
   }
 
   logout() {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(undefined);
-  } 
+  }
 }

@@ -10,47 +10,56 @@ import { GeneralInformationComponent } from './global/component/general-informat
 import { DocumentsComponent } from './global/component/documents/documents.component';
 
 const routes: Routes = [
-  { path: '', redirectTo:'/login', pathMatch:'full' },
-  { path: 'login', component: LoginComponent},
-  { path: 'admin', component: ContainerComponent, children:[
-    { path: 'dashboard', 
-      component: DashboardComponent, 
-      canActivate: [AuthGuardService],
-      data: {
-        breadcrumb: "Dashboard",
-      } 
-    },{ path: 'user', 
-      component: UserComponent, 
-      canActivate: [AuthGuardService],
-      data: {
-        breadcrumb: "User",
-       roles: [Role.Admin]
-      } 
-    }, { path: 'general', 
-    component: GeneralInformationComponent, 
-    canActivate: [AuthGuardService],
-    data: {
-      breadcrumb: "General Information",
-     roles: [Role.Admin]
-    } 
-  }, { path: 'documents', 
-  component: DocumentsComponent, 
-  canActivate: [AuthGuardService],
-  data: {
-    breadcrumb: "Documents",
-   roles: [Role.Admin]
-  } 
-}
-  ]},
-  { path: 'user', component: ContainerComponent, children:[
-    { path: 'dashboard', 
-      component: DashboardComponent, 
-      canActivate: [AuthGuardService],
-      data: {
-        breadcrumb: "Dashboard",
-      } 
-    }
-  ]}
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'admin', component: ContainerComponent, children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Dashboard",
+        }
+      }, {
+        path: 'user',
+        component: UserComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "User",
+          roles: [Role.Admin]
+        }
+      }, {
+        path: 'general',
+        component: GeneralInformationComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "General Information",
+          roles: [Role.Admin]
+        }
+      }, {
+        path: 'documents',
+        component: DocumentsComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Documents",
+          roles: [Role.Admin]
+        }
+      }
+    ]
+  },
+  {
+    path: 'user', component: ContainerComponent, children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Dashboard",
+        }
+      }
+    ]
+  }
 
 ];
 
