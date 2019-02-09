@@ -24,6 +24,7 @@ import { GeneralInformationComponent } from './component/general-information/gen
 import { DocumentsComponent } from './component/documents/documents.component';
 import { TokenInterceptor } from './service/token-interceptor';
 import { MenuComponent } from './component/menu/menu.component';
+import { NotfoundComponent } from './component/notfound/notfound.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ const routes: Routes = [];
     AppSidebarNavLinkComponent,
     AppSidebarNavDropdownComponent,
     AppSidebarNavTitleComponent,
-    MenuComponent
+    MenuComponent,
+    NotfoundComponent
   ],
   imports: [
     CommonModule,

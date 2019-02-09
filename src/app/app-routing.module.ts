@@ -8,6 +8,7 @@ import { Role } from './global/models/Role';
 import { UserComponent } from './global/component/user/user.component';
 import { GeneralInformationComponent } from './global/component/general-information/general-information.component';
 import { DocumentsComponent } from './global/component/documents/documents.component';
+import { NotfoundComponent } from './global/component/notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -45,6 +46,14 @@ const routes: Routes = [
           breadcrumb: "Documents",
           roles: [Role.Admin]
         }
+      }, {
+        path: '**',
+        component: NotfoundComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Not Found",
+          roles: [Role.Admin]
+        }
       }
     ]
   },
@@ -56,6 +65,14 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
         data: {
           breadcrumb: "Dashboard",
+        }
+      }, {
+        path: '**',
+        component: NotfoundComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Not Found",
+          roles: [Role.Admin]
         }
       }
     ]
