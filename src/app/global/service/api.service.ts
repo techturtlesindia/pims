@@ -37,6 +37,26 @@ export class ApiService {
     }
   }
 
+  public signup(data:any){
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "auth/signup";
+    console.log(url);
+    return this.http.post<any>(url, JSON.stringify(data), {
+      headers: headers
+    })
+    .pipe(map(user => {
+      console.log('user',user);
+        if (user) {
+          // localStorage.setItem('currentUser', btoa(JSON.stringify(user)));
+          // this.currentUserSubject.next(user);
+        }
+
+        return user;
+    }));
+  }
+
   public authenticationLogin(data: any) {
     var headers = new HttpHeaders({
       'Content-Type': 'application/json'

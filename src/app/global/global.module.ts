@@ -29,6 +29,7 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { SignupComponent } from './component/signup/signup.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ const routes: Routes = [];
     AppSidebarNavDropdownComponent,
     AppSidebarNavTitleComponent,
     MenuComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
