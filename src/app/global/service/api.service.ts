@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { User } from '../models/User';
 import { Menu } from '../models/Menu';
 import { Users } from '../models/Users';
-import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
