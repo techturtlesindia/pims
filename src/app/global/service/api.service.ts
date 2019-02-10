@@ -56,6 +56,47 @@ export class ApiService {
         return user;
     }));
   }
+  public editUser(data:any){
+    console.log('data',data);
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "common/user/update";
+    console.log(url);
+    return this.http.put<any>(url, JSON.stringify(data), {
+      headers: headers
+    })
+    .pipe(map(user => {
+      console.log('user',user);
+        if (user) {
+          // localStorage.setItem('currentUser', btoa(JSON.stringify(user)));
+          // this.currentUserSubject.next(user);
+        }
+
+        return user;
+    }));
+  }
+
+  public getUser(pageno,size){
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "common/user/call/"+pageno+"/"+size;
+    console.log(url);
+    return this.http.get<any>(url, {
+      headers: headers
+    })
+    .pipe(map(user => {
+      console.log('user',user);
+        if (user) {
+          // localStorage.setItem('currentUser', btoa(JSON.stringify(user)));
+          // this.currentUserSubject.next(user);
+        }
+
+        return user;
+    }));
+
+  }
 
   public authenticationLogin(data: any) {
     var headers = new HttpHeaders({
@@ -122,6 +163,16 @@ export class ApiService {
     })
     var url = this.apiUrl + "common/menu/delete";
     return await this.http.post(url, row, {
+      headers: headers
+    })
+  }
+
+  public async deleteU(id) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "common/menu/delete/"+id;
+    return await this.http.delete(url, {
       headers: headers
     })
   }

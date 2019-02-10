@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GlobalModule } from './global/global.module';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent
@@ -11,7 +11,8 @@ import { GlobalModule } from './global/global.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GlobalModule
+    GlobalModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
