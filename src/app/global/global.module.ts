@@ -29,6 +29,11 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { LookupComponent } from './component/lookup/lookup.component';
+import { LocationComponent } from './component/location/location.component';
+import { PimsRankComponent } from './component/pims-rank/pims-rank.component';
+import { PimsPayScaleComponent } from './component/pims-pay-scale/pims-pay-scale.component';
+import { PostOfficeComponent } from './component/post-office/post-office.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -54,7 +59,12 @@ const routes: Routes = [];
     AppSidebarNavDropdownComponent,
     AppSidebarNavTitleComponent,
     MenuComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LookupComponent,
+    LocationComponent,
+    PimsRankComponent,
+    PimsPayScaleComponent,
+    PostOfficeComponent
   ],
   imports: [
     CommonModule,
