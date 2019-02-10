@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
-import { PimsRank } from '../../models/PimsRank';
+import { Lookup } from '../../../models/Lookup';
 
 @Component({
-  selector: 'app-pims-rank',
-  templateUrl: './pims-rank.component.html',
-  styleUrls: ['./pims-rank.component.scss']
+  selector: 'app-lookup',
+  templateUrl: './lookup.component.html',
+  styleUrls: ['./lookup.component.scss']
 })
-export class PimsRankComponent implements OnInit {
-  pimsRankForm:FormGroup;
+export class LookupComponent implements OnInit {
+  lookupForm:FormGroup;
   validationMessages: any;
-  pimsRank:PimsRank;
+  lookup:Lookup;
 
-  pimsRankData = [{
+  lookupData = [{
     id: 1,
+    parent_id: 1,
     name: 'Name',
     name_native: 'Name Native',
+    keyword: 'keyword',
     abbreviation: 'Abbreviation',
     abbreviation_native: 'Abbreviation Native',
-    pmis_pay_scale_id: '12345677',
+    si_no: '12345677',
     isActive: 0
   }];
   
@@ -26,13 +28,14 @@ export class PimsRankComponent implements OnInit {
   constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.pimsRankForm = this.formBuilder.group({
+    this.lookupForm = this.formBuilder.group({
       name:['', [Validators.required]],
       name_native:['', Validators.required],
+      keyword:['', Validators.required],
       abbreviation:['', Validators.required],
       abbreviation_native:['', Validators.required],
-      pmis_pay_scale_id:['', Validators.required],
-      isActive:['0', Validators.required]   
+      si_no:['', Validators.required],
+      isActive:['0', Validators.required]      
     })
     this.validationMessages = {
       'name': [
@@ -41,14 +44,17 @@ export class PimsRankComponent implements OnInit {
       'name_native': [
         {type: 'required', message: 'Please Enter Name Native'}
       ],
+      'keyword': [
+        {type: 'required', message: 'Please Enter Keyword'}
+      ],
       'abbreviation': [
         {type: 'required', message: 'Please Enter Abbreviation'}
       ],
       'abbreviation_native': [
         {type: 'required', message: 'Please Enter Abbreviation Native'}
       ],
-      'pmis_pay_scale_id': [
-        {type: 'required', message: 'Please Enter Pmis Pay Scale Id'}
+      'si_no': [
+        {type: 'required', message: 'Please Enter SI No'}
       ],
       'isActive': [
         {type: 'required', message: 'Please Enter IsActive'}
@@ -61,11 +67,11 @@ export class PimsRankComponent implements OnInit {
     return control.hasError(validation.type) && (control.dirty || control.touched) && (control == null || control.value =="");
   }
 
-  async saveDocuments(pimsRankForm:FormGroup) {
-    this.pimsRank = new PimsRank();
-    if(pimsRankForm.valid) {
-      this.pimsRank = pimsRankForm.value;
-      console.log(this.pimsRank);
+  async saveDocuments(documentForm:FormGroup) {
+    this.lookup = new Lookup();
+    if(documentForm.valid) {
+      this.lookup = documentForm.value;
+      console.log(this.lookup);
     }
   }
 

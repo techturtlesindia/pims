@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
-import { PimsPayScale } from '../../models/PimsPayScale';
+import { PimsPayScale } from '../../../models/PimsPayScale';
 
 @Component({
   selector: 'app-pims-pay-scale',

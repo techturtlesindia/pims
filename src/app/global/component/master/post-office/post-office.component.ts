@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
-import { Location } from '../../models/Location';
+import { PostOffice } from '../../../models/PostOffice';
 
 @Component({
-  selector: 'app-location',
-  templateUrl: './location.component.html',
-  styleUrls: ['./location.component.scss']
+  selector: 'app-post-office',
+  templateUrl: './post-office.component.html',
+  styleUrls: ['./post-office.component.scss']
 })
-export class LocationComponent implements OnInit {
-  locationForm:FormGroup;
+export class PostOfficeComponent implements OnInit {
+  postOfficeForm:FormGroup;
   validationMessages: any;
-  location:Location;
+  postOffice:PostOffice;
 
-  locationData = [{
+  postOfficeData = [{
     id: 1,
-    parent_id: 1,
     name: 'Name',
     name_native: 'Name Native',
-    type: 'type',
     isActive: 0
   }];
   
@@ -25,11 +23,10 @@ export class LocationComponent implements OnInit {
   constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.locationForm = this.formBuilder.group({
+    this.postOfficeForm = this.formBuilder.group({
       name:['', [Validators.required]],
       name_native:['', Validators.required],
-      type:['', Validators.required],
-      isActive:['0', Validators.required]  
+      isActive:['0', Validators.required]   
     })
     this.validationMessages = {
       'name': [
@@ -37,9 +34,6 @@ export class LocationComponent implements OnInit {
       ],
       'name_native': [
         {type: 'required', message: 'Please Enter Name Native'}
-      ],
-      'type': [
-        {type: 'required', message: 'Please Enter Type'}
       ],
       'isActive': [
         {type: 'required', message: 'Please Enter IsActive'}
@@ -52,11 +46,11 @@ export class LocationComponent implements OnInit {
     return control.hasError(validation.type) && (control.dirty || control.touched) && (control == null || control.value =="");
   }
 
-  async saveDocuments(locationForm:FormGroup) {
-    this.location = new Location();
-    if(locationForm.valid) {
-      this.location = locationForm.value;
-      console.log(this.location);
+  async saveDocuments(postOfficeForm:FormGroup) {
+    this.postOffice = new PostOffice();
+    if(postOfficeForm.valid) {
+      this.postOffice = postOfficeForm.value;
+      console.log(this.postOffice);
     }
   }
 
