@@ -30,6 +30,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SignupComponent } from './component/signup/signup.component';
+import { UsersettingComponent } from './component/usersetting/usersetting.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ const routes: Routes = [];
     AppSidebarNavTitleComponent,
     MenuComponent,
     NotfoundComponent,
-    SignupComponent
+    SignupComponent,
+    UsersettingComponent
   ],
   imports: [
     CommonModule,

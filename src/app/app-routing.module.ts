@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './global/component/login/login.component';
-import { SignupComponent } from './global/component/signup/signup.component';
+import { UsersettingComponent } from './global/component/usersetting/usersetting.component';
 
 import { ContainerComponent } from './global/component/container/container.component';
 import { DashboardComponent } from './global/component/dashboard/dashboard.component';
@@ -16,7 +16,6 @@ import { MenuComponent } from './global/component/menu/menu.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  {path:'signup',component:SignupComponent},
   {
     path: 'admin', component: ContainerComponent, children: [
       {
@@ -53,6 +52,15 @@ const routes: Routes = [
       }, {
         path: 'menu',
         component: MenuComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Menu",
+          roles: [Role.Admin]
+        }
+      },
+      {
+        path: 'usersetting',
+        component: UsersettingComponent,
         canActivate: [AuthGuardService],
         data: {
           breadcrumb: "Menu",

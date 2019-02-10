@@ -16,11 +16,11 @@ export interface ILogin {
 }
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  selector: 'app-usersetting',
+  templateUrl: './usersetting.component.html',
+  styleUrls: ['./usersetting.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class UsersettingComponent implements OnInit {
 
   signupForm: FormGroup;
   validationMessages: any;
@@ -71,11 +71,11 @@ export class SignupComponent implements OnInit {
 
   onKeyPressLogin(event : any){
     if(event.key == "Enter"){
-      this.signup(this.signupForm);
+      this.createUser(this.signupForm);
     }
   }
 
-  async signup(signupForm:FormGroup) {
+  async createUser(signupForm:FormGroup) {
     if(signupForm.valid){
       console.log(signupForm.value);
 
@@ -84,13 +84,13 @@ export class SignupComponent implements OnInit {
       "name":signupForm.value.name,
       "username":signupForm.value.username,
       "email":signupForm.value.email,
-      "role":signupForm.value.role,
+      "role":[signupForm.value.role],
       "password":signupForm.value.password
       })
       //.pipe(first())
       .subscribe(
           data => {
-            this.router.navigate(['/admin/dashboard']);
+            this.router.navigate(['/admin/usersetting']);
           },
           error => {
             console.log(error);
@@ -99,6 +99,5 @@ export class SignupComponent implements OnInit {
           });
     }
   }
-
 
 }
