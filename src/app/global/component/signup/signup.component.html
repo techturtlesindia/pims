@@ -1,0 +1,85 @@
+<div class="animated fadeIn">
+    <div class="app flex-row align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card-group">
+              <div class="card p-4">
+                <div class="card-body">
+                  <h1>Signup</h1>
+                  <p class="text-muted">Sign Up new account</p>
+                  <form [formGroup]="signupForm">
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-user"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Name" formControlName="name" name="name">
+                          <div *ngFor="let validation of validationMessages.name">
+                            <div class="input-group mb-3 error error-message" *ngIf="hasValidationError(validation, 'name', signupForm)">{{validation.message}}</div>
+                          </div>
+                        </div>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Username" formControlName="username" name="username">
+                      <div *ngFor="let validation of validationMessages.username">
+                        <div class="input-group mb-3 error error-message" *ngIf="hasValidationError(validation, 'username', signupForm)">{{validation.message}}</div>
+                      </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="icon-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Email" formControlName="email" name="email">
+                        <div *ngFor="let validation of validationMessages.email">
+                          <div class="input-group mb-3 error error-message" *ngIf="hasValidationError(validation, 'email', signupForm)">{{validation.message}}</div>
+                        </div>
+                      </div>
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-user"></i></span>
+                          </div>
+                          <!-- <input type="text" class="form-control" placeholder="Role" formControlName="role" name="role"> -->
+                          <select class="form-control" formControlName="role" name="role" multiple>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                          </select>
+                          <div *ngFor="let validation of validationMessages.role">
+                            <div class="input-group mb-3 error error-message" *ngIf="hasValidationError(validation, 'role', signupForm)">{{validation.message}}</div>
+                          </div>
+                        </div>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                      <div *ngFor="let validation of validationMessages.password">
+                        <div class="input-group mb-3 error error-message" *ngIf="hasValidationError(validation, 'password', signupForm)">{{validation.message}}</div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-link px-0" (click)="signup()">Signup</button>
+                        </div>
+
+                    </div> -->
+                    <div class="row">
+                      <div class="col-6">
+                        <button type="button" class="btn btn-primary px-4" (click)="signup(signupForm)" [disabled]="!signupForm.valid">Sign up</button>
+                      </div>
+                      <!-- <div class="col-6 text-right">
+                        <button class="btn btn-link px-0">Forgot password?</button>
+                      </div> -->
+                    </div>
+                     <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

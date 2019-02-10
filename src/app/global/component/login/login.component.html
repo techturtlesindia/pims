@@ -29,13 +29,18 @@
                   </div>
 
                   <div class="row">
-                    <div class="input-group mb-4">
-                      <div class="input-group-prepend">
-                        <div class="col-6">
-                          <input type="checkbox" /> Remember me
+                    <div class="col-6">
+                      <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                          <div class="col-6">
+                            <input type="checkbox" /> Remember me
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <!-- <div class="col-6">
+                        <button class="btn btn-link px-0" (click)="signup()">Signup</button>
+                    </div> -->
                   </div>
                   <div class="row">
                     <div class="col-6">
@@ -45,6 +50,7 @@
                       <button class="btn btn-link px-0">Forgot password?</button>
                     </div>
                   </div>
+                   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
                 </form>
               </div>
             </div>

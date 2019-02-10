@@ -27,6 +27,31 @@
     "icon": "icon-notebook"
   },
   {
+    "name": "Lookup",
+    "url": "lookup",
+    "icon": "icon-notebook"
+  },
+  {
+    "name": "Location",
+    "url": "location",
+    "icon": "icon-notebook"
+  },
+  {
+    "name": "Pmis Rank",
+    "url": "ranks",
+    "icon": "icon-notebook"
+  },
+  {
+    "name": "Post Office",
+    "url": "postoffice",
+    "icon": "icon-notebook"
+  },
+  {
+    "name": "Pims Pay Scale",
+    "url": "payscale",
+    "icon": "icon-notebook"
+  },
+  {
     "name": "Menu",
     "url": "menu",
     "icon": "icon-notebook"

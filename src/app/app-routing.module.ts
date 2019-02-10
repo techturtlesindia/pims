@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './global/component/login/login.component';
+import { UsersettingComponent } from './global/component/usersetting/usersetting.component';
+
 import { ContainerComponent } from './global/component/container/container.component';
 import { DashboardComponent } from './global/component/dashboard/dashboard.component';
 import { AuthGuardService } from './global/guard/auth-guard.service';
@@ -10,6 +12,12 @@ import { GeneralInformationComponent } from './global/component/general-informat
 import { DocumentsComponent } from './global/component/documents/documents.component';
 import { NotfoundComponent } from './global/component/notfound/notfound.component';
 import { MenuComponent } from './global/component/menu/menu.component';
+import { LookupComponent } from './global/component/master/lookup/lookup.component';
+import { LocationComponent } from './global/component/master/location/location.component';
+import { PimsRankComponent } from './global/component/master/pims-rank/pims-rank.component';
+import { PostOfficeComponent } from './global/component/master/post-office/post-office.component';
+import { PimsPayScaleComponent } from './global/component/master/pims-pay-scale/pims-pay-scale.component';
+import { AdditionalqualificationComponent } from './global/component/entry/additionalqualification/additionalqualification.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -55,7 +63,67 @@ const routes: Routes = [
           breadcrumb: "Menu",
           roles: [Role.Admin]
         }
-      }, {
+      },
+      {
+        path: 'usersetting',
+        component: UsersettingComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Menu",
+          roles: [Role.Admin]
+        }
+      },
+      {
+        path: 'master/lookup',
+        component: LookupComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Lookup",
+          roles: [Role.Admin]
+        }
+      },
+      {
+        path: 'master/location',
+        component: LocationComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Location",
+          roles: [Role.Admin]
+        }
+      },{
+        path: 'master/ranks',
+        component: PimsRankComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Pims Rank",
+          roles: [Role.Admin]
+        }
+      },
+      {
+        path: 'master/postoffice',
+        component: PostOfficeComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Post Office",
+          roles: [Role.Admin]
+        }
+      },{
+        path: 'master/payscale',
+        component: PimsPayScaleComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Pims Pay Scale",
+          roles: [Role.Admin]
+        }
+      },{
+        path: 'entry/additionalqualification',
+        component: AdditionalqualificationComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Additional Qualification Component",
+          roles: [Role.Admin]
+        }
+      },{
         path: '**',
         component: NotfoundComponent,
         canActivate: [AuthGuardService],

@@ -31,6 +31,31 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PaginatorModule } from 'primeng/paginator';
 import { TabViewModule } from 'primeng/tabview';
+import { LookupComponent } from './component/master/lookup/lookup.component';
+import { LocationComponent } from './component/master/location/location.component';
+import { PimsRankComponent } from './component/master/pims-rank/pims-rank.component';
+import { PimsPayScaleComponent } from './component/master/pims-pay-scale/pims-pay-scale.component';
+import { PostOfficeComponent } from './component/master/post-office/post-office.component';
+import { SignupComponent } from './component/signup/signup.component';
+import { UsersettingComponent } from './component/usersetting/usersetting.component';
+import { AddressInformationComponent } from './component/entry/address-information/address-information.component';
+import { AdditionalqualificationComponent } from './component/entry/additionalqualification/additionalqualification.component';
+import { ChildrenComponent } from './component/entry/children/children.component';
+import { LocalComponent } from './component/entry/local/local.component';
+import { AwardComponent } from './component/entry/award/award.component';
+import { DisciplinaryComponent } from './component/entry/disciplinary/disciplinary.component';
+import { EducationalComponent } from './component/entry/educational/educational.component';
+import { ForeigntrainingComponent } from './component/entry/foreigntraining/foreigntraining.component';
+import { ForeigntravelComponent } from './component/entry/foreigntravel/foreigntravel.component';
+import { MagisterialComponent } from './component/entry/magisterial/magisterial.component';
+import { GeneralComponent } from './component/entry/general/general.component';
+import { PublicationComponent } from './component/entry/publication/publication.component';
+import { ServiceComponent } from './component/entry/service/service.component';
+import { LanguageComponent } from './component/entry/language/language.component';
+import { ProfessionalComponent } from './component/entry/professional/professional.component';
+import { SpouseComponent } from './component/entry/spouse/spouse.component';
+import { SeniorComponent } from './component/entry/senior/senior.component';
+import { LeaveComponent } from './component/entry/leave/leave.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -56,7 +81,33 @@ const routes: Routes = [];
     AppSidebarNavDropdownComponent,
     AppSidebarNavTitleComponent,
     MenuComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SignupComponent,
+    UsersettingComponent,
+    LookupComponent,
+    LocationComponent,
+    PimsRankComponent,
+    PimsPayScaleComponent,
+    PostOfficeComponent,
+    SignupComponent,
+    AddressInformationComponent,
+    AdditionalqualificationComponent,
+    ChildrenComponent,
+    LocalComponent,
+    AwardComponent,
+    DisciplinaryComponent,
+    EducationalComponent,
+    ForeigntrainingComponent,
+    ForeigntravelComponent,
+    MagisterialComponent,
+    GeneralComponent,
+    PublicationComponent,
+    ServiceComponent,
+    LanguageComponent,
+    ProfessionalComponent,
+    SpouseComponent,
+    SeniorComponent,
+    LeaveComponent
   ],
   imports: [
     CommonModule,
