@@ -29,6 +29,8 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PaginatorModule } from 'primeng/paginator';
+import { TabViewModule } from 'primeng/tabview';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ const routes: Routes = [];
     ToastModule,
     ConfirmDialogModule,
     MultiSelectModule,
-    ScrollingModule
+    ScrollingModule,
+    PaginatorModule,
+    TabViewModule
   ], exports: [
     ToastModule,
     HeaderComponent,
@@ -86,7 +90,9 @@ const routes: Routes = [];
     AppSidebarNavTitleComponent,
     ConfirmDialogModule,
     MultiSelectModule,
-    ScrollingModule
+    ScrollingModule,
+    PaginatorModule,
+    TabViewModule
   ], providers: [
     {
       provide: HTTP_INTERCEPTORS,

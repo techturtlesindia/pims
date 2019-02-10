@@ -83,10 +83,19 @@ export class ApiService {
 
   public async deleteManu(row: Menu) {
     var headers = new HttpHeaders({
+    })
+    var url = this.apiUrl + "common/menu/delete/" + row.id;
+    return await this.http.delete(url, {
+      headers: headers
+    })
+  }
+
+  public async updateManu(menu: Menu) {
+    var headers = new HttpHeaders({
       'Content-Type': 'application/json'
     })
-    var url = this.apiUrl + "common/menu/delete";
-    return await this.http.post(url, row, {
+    var url = this.apiUrl + "common/menu/update";
+    return await this.http.put(url, menu, {
       headers: headers
     })
   }

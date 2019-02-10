@@ -16,37 +16,13 @@ export class MenuComponent implements OnInit {
   menuForm: FormGroup;
   validationMessages: any;
   page = 1;
+  pageNo = 0;
   size = 10;
-
+  totalRecords = 0;
+  isEdit = false;
+  selectedMenuId = 0;
   menu: Menu;
-  menus: Menu[] = [{
-    "name": "Dashboard",
-    "url": "dashboard",
-    "icon": "icon-notebook",
-    "childmenu": 1,
-    "isactive": "1",
-    "rolename": "ROLE_ADMIN",
-    "enterby": "sanjay",
-    "isparent": "1",
-  }, {
-    "name": "Documents",
-    "url": "documents",
-    "icon": "icon-file",
-    "childmenu": 1,
-    "isactive": "1",
-    "rolename": "ROLE_USER",
-    "enterby": "sanjay",
-    "isparent": "1",
-  }, {
-    "name": "User",
-    "url": "user",
-    "icon": "icon-user",
-    "childmenu": 1,
-    "isactive": "1",
-    "rolename": "ROLE_ADMIN",
-    "enterby": "sanjay",
-    "isparent": "1",
-  }];
+  menus: Menu[] = [];
   constructor(private confirmationService: ConfirmationService, private messageService: MessageService, public formBuilder: FormBuilder, public api: ApiService) { }
 
   ngOnInit() {
@@ -89,7 +65,8 @@ export class MenuComponent implements OnInit {
   async getMenus() {
     let saveResponse = await this.api.getManus(this.page, this.size);
     saveResponse.subscribe((value: any) => {
-      console.log(value);
+      this.menus = value.content;
+      this.totalRecords = value.totalElements;
     })
   }
 
@@ -102,17 +79,26 @@ export class MenuComponent implements OnInit {
     this.confirmationService.confirm({
       message: 'Are you sure that you want to delete this record?',
       accept: async () => {
-        let saveResponse = await this.api.deleteManu(row);
+        debugger;
+        let deleteResponse = await this.api.deleteManu(row);
+        deleteResponse.subscribe(async (value) => {
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: "Menu delete successfully" });
+          this.getMenus();
+        })
       }
     });
   }
 
   editRow(row: Menu) {
+    this.isEdit = true;
     this.menu = row;
+    this.selectedMenuId = row.id;
     this.menuForm.controls['name'].setValue(row.name);
     this.menuForm.controls['url'].setValue(row.url);
     this.menuForm.controls['rolename'].setValue(row.rolename);
-    this.menuForm.controls['childmenu'].setValue(row.childmenu);
+    if (row.childmenu.length == 0) {
+      this.menuForm.controls['childmenu'].setValue("1");
+    }
     this.menuForm.controls['icon'].setValue(row.icon);
     this.menuForm.controls['isactive'].setValue(row.isactive);
     this.menuForm.controls['isparent'].setValue(row.isparent);
@@ -127,21 +113,48 @@ export class MenuComponent implements OnInit {
     this.menuForm.controls['isactive'].setValue("");
     this.menuForm.controls['isparent'].setValue("");
     this.menuForm.reset(this.menuForm.value);
+    this.isEdit = false;
   }
 
   public async saveMenus(menuForm: FormGroup) {
     this.menu = new Menu();
     if (menuForm.valid) {
-      let result = this.api.currentUserValue;
-      this.menu = menuForm.value;
-      this.menu.enterby = result.username;
-      let saveResponse = await this.api.saveManu(this.menu);
-      saveResponse.subscribe((value: any) => {
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: value.message });
-        this.revert();
-      })
+      if (this.isEdit == false) {
+        let result = this.api.currentUserValue;
+        this.menu = menuForm.value;
+        this.menu.id = null;
+        this.menu.enterby = result.username;
+        let saveResponse = await this.api.saveManu(this.menu);
+        saveResponse.subscribe((value: any) => {
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: value.message });
+          this.revert();
+          this.getMenus();
+        })
+      } else {
+        this.menu.name = menuForm.value.name;
+        this.menu.url = menuForm.value.url;
+        this.menu.icon = menuForm.value.icon;
+        if (menuForm.value.childmenu == "1") {
+          this.menu.childmenu = [];
+        }
+        this.menu.isactive = menuForm.value.isactive;
+        this.menu.rolename = menuForm.value.rolename;
+        this.menu.isparent = menuForm.value.isparent;
+        this.menu.id = this.selectedMenuId;
+        let updateResponse = await this.api.updateManu(this.menu);
+        updateResponse.subscribe((value: any) => {
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: value.message });
+          this.revert();
+          this.getMenus();
+        })
+      }
     }
   }
 
-
+  paginate(event) {
+    this.size = event.rows;
+    this.page = (event.page + 1);
+    this.pageNo = event.page;
+    this.getMenus();
+  }
 }
