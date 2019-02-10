@@ -12,11 +12,12 @@ import { GeneralInformationComponent } from './global/component/general-informat
 import { DocumentsComponent } from './global/component/documents/documents.component';
 import { NotfoundComponent } from './global/component/notfound/notfound.component';
 import { MenuComponent } from './global/component/menu/menu.component';
-import { LookupComponent } from './global/component/lookup/lookup.component';
-import { LocationComponent } from './global/component/location/location.component';
-import { PimsRankComponent } from './global/component/pims-rank/pims-rank.component';
-import { PostOfficeComponent } from './global/component/post-office/post-office.component';
-import { PimsPayScaleComponent } from './global/component/pims-pay-scale/pims-pay-scale.component';
+import { LookupComponent } from './global/component/master/lookup/lookup.component';
+import { LocationComponent } from './global/component/master/location/location.component';
+import { PimsRankComponent } from './global/component/master/pims-rank/pims-rank.component';
+import { PostOfficeComponent } from './global/component/master/post-office/post-office.component';
+import { PimsPayScaleComponent } from './global/component/master/pims-pay-scale/pims-pay-scale.component';
+import { AdditionalqualificationComponent } from './global/component/entry/additionalqualification/additionalqualification.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -73,7 +74,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'lookup',
+        path: 'master/lookup',
         component: LookupComponent,
         canActivate: [AuthGuardService],
         data: {
@@ -82,7 +83,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'location',
+        path: 'master/location',
         component: LocationComponent,
         canActivate: [AuthGuardService],
         data: {
@@ -90,7 +91,7 @@ const routes: Routes = [
           roles: [Role.Admin]
         }
       },{
-        path: 'pmis_rank',
+        path: 'master/ranks',
         component: PimsRankComponent,
         canActivate: [AuthGuardService],
         data: {
@@ -99,7 +100,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'post_office',
+        path: 'master/postoffice',
         component: PostOfficeComponent,
         canActivate: [AuthGuardService],
         data: {
@@ -107,11 +108,19 @@ const routes: Routes = [
           roles: [Role.Admin]
         }
       },{
-        path: 'pims_pay_scale',
+        path: 'master/payscale',
         component: PimsPayScaleComponent,
         canActivate: [AuthGuardService],
         data: {
           breadcrumb: "Pims Pay Scale",
+          roles: [Role.Admin]
+        }
+      },{
+        path: 'entry/additionalqualification',
+        component: AdditionalqualificationComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          breadcrumb: "Additional Qualification Component",
           roles: [Role.Admin]
         }
       },{

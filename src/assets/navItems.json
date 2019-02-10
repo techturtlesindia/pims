@@ -38,17 +38,17 @@
   },
   {
     "name": "Pmis Rank",
-    "url": "pmis_rank",
+    "url": "ranks",
     "icon": "icon-notebook"
   },
   {
     "name": "Post Office",
-    "url": "post_office",
+    "url": "postoffice",
     "icon": "icon-notebook"
   },
   {
     "name": "Pims Pay Scale",
-    "url": "pims_pay_scale",
+    "url": "payscale",
     "icon": "icon-notebook"
   },
   {

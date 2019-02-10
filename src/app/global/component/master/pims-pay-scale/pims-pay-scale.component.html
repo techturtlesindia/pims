@@ -1,0 +1,148 @@
+<div class="animated fadeIn">
+    <form [formGroup]="pimsPayScaleForm" method="post" class="form-horizontal">
+      <div class="row">
+  
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <strong>Pims Pay Scale</strong>
+            </div>
+            <div class="card-body">
+              <strong>Pims Pay Scale</strong>
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Scale</label>
+                    <div class="col-md-9">
+                      <input formControlName="scale" class="form-control" id="scale" name="scale" type="text" placeholder="Enter Scale">
+                      <div *ngFor="let validation of validationMessages.scale">
+                        <span class="help-block" *ngIf="hasValidationError(validation, 'scale', pimsPayScaleForm)" >{{validation.message}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-sm-4">
+  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Grade</label>
+                    <div class="col-md-9">
+                      <input formControlName="grade" class="form-control" id="grade" name="grade" type="text" placeholder="Enter Grade">
+                      <div *ngFor="let validation of validationMessages.grade">
+                        <span class="help-block" *ngIf="hasValidationError(validation, 'grade', pimsPayScaleForm)" >{{validation.message}}</span>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Pay Scale Year</label>
+                    <div class="col-md-9">
+                      <input formControlName="pay_scale_year" class="form-control" id="pay_scale_year" name="pay_scale_year" type="text" placeholder="Pay Scale Year">
+                      <div *ngFor="let validation of validationMessages.pay_scale_year">
+                        <span class="help-block" *ngIf="hasValidationError(validation, 'pay_scale_year', pimsPayScaleForm)" >{{validation.message}}</span>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-8">
+                    <div class="form-group row">
+                      <label class="col-md-3 col-form-label" for="name">IsActive</label>
+                      <div class="col-md-9">
+                        <select formControlName="isActive" class="form-control" id="isActive" name="isActive">
+                          <option selected="selected">Select IsActive Type</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                        </select>
+                        <div *ngFor="let validation of validationMessages.isActive">
+                          <span class="help-block" *ngIf="hasValidationError(validation, 'isActive', pimsPayScaleForm)" >{{validation.message}}</span>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                  </div>
+                </div>
+              
+            </div>
+  
+            <div class="card-footer">
+              <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!pimsPayScaleForm.valid" (click)="saveDocuments(pimsPayScaleForm)">
+                <i class="fa fa-dot-circle-o"></i> Save
+              </button>
+            </div>
+  
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
+                    <thead>
+                      <tr role="row">
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 130px;">Scale</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">Grade</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Pay Scale Year</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">IsActive</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 180px;">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr role="row" class="odd" *ngFor="let pimsPayScale of pimsPayScaleData">
+                        <td>{{pimsPayScale.scale}}</td>
+                        <td>{{pimsPayScale.grade}}</td>
+                        <td>{{pimsPayScale.pay_scale_year}}</td>
+                        <td>{{pimsPayScale.isActive}}</td>
+                        <td>
+                          <a class="btn btn-success" href="#">
+                            <i class="fa fa-search-plus"></i>
+                          </a>
+                          <a class="btn btn-info" href="#">
+                            <i class="fa fa-edit"></i>
+                          </a>
+                          <a class="btn btn-danger" href="#">
+                            <i class="fa fa-trash-o"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-5">
+                  <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 32 entries</div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                  <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                    <ul class="pagination">
+                      <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                      <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                      <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                      <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                      <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                      <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </form>
+  
+  
+  </div>
+  
