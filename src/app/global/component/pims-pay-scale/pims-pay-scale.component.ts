@@ -28,7 +28,7 @@ export class PimsPayScaleComponent implements OnInit {
       scale:['', [Validators.required]],
       grade:['', Validators.required],
       pay_scale_year:['', Validators.required],
-      isActive: ['', Validators.required] 
+      isActive: ['0', Validators.required] 
     })
     this.validationMessages = {
       'scale': [

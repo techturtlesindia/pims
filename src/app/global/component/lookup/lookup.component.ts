@@ -35,7 +35,7 @@ export class LookupComponent implements OnInit {
       abbreviation:['', Validators.required],
       abbreviation_native:['', Validators.required],
       si_no:['', Validators.required],
-      isActive:['', Validators.required]      
+      isActive:['0', Validators.required]      
     })
     this.validationMessages = {
       'name': [
