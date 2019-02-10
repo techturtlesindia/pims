@@ -108,6 +108,8 @@
                     <div class="col-md-9">
                       <select formControlName="isActive" class="form-control" id="isActive" name="isActive">
                         <option selected="selected">Select IsActive Type</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
                       </select>
                       <div *ngFor="let validation of validationMessages.isActive">
                         <span class="help-block" *ngIf="hasValidationError(validation, 'isActive', lookupForm)" >{{validation.message}}</span>

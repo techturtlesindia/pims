@@ -29,7 +29,7 @@ export class LocationComponent implements OnInit {
       name:['', [Validators.required]],
       name_native:['', Validators.required],
       type:['', Validators.required],
-      isActive:['', Validators.required]  
+      isActive:['0', Validators.required]  
     })
     this.validationMessages = {
       'name': [

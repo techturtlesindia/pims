@@ -81,7 +81,7 @@ const routes: Routes = [
           roles: [Role.Admin]
         }
       },{
-        path: 'pmis_rank',
+        path: 'ranks',
         component: PimsRankComponent,
         canActivate: [AuthGuardService],
         data: {
@@ -90,7 +90,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'post_office',
+        path: 'postoffice',
         component: PostOfficeComponent,
         canActivate: [AuthGuardService],
         data: {
@@ -98,7 +98,7 @@ const routes: Routes = [
           roles: [Role.Admin]
         }
       },{
-        path: 'pims_pay_scale',
+        path: 'payscale',
         component: PimsPayScaleComponent,
         canActivate: [AuthGuardService],
         data: {

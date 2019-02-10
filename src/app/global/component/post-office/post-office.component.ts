@@ -26,7 +26,7 @@ export class PostOfficeComponent implements OnInit {
     this.postOfficeForm = this.formBuilder.group({
       name:['', [Validators.required]],
       name_native:['', Validators.required],
-      isActive:['', Validators.required]   
+      isActive:['0', Validators.required]   
     })
     this.validationMessages = {
       'name': [
