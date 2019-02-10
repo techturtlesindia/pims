@@ -15,6 +15,9 @@ export class MenuComponent implements OnInit {
 
   menuForm: FormGroup;
   validationMessages: any;
+  page = 1;
+  size = 10;
+
   menu: Menu;
   menus: Menu[] = [{
     "name": "Dashboard",
@@ -79,6 +82,15 @@ export class MenuComponent implements OnInit {
         { type: 'required', message: 'PPlease Select Parent' }
       ]
     };
+
+    this.getMenus();
+  }
+
+  async getMenus() {
+    let saveResponse = await this.api.getManus(this.page, this.size);
+    saveResponse.subscribe((value: any) => {
+      console.log(value);
+    })
   }
 
   hasValidationError(validation: any, controlName: (string | number)[], formGroup: FormGroup): boolean {

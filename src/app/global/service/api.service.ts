@@ -5,7 +5,6 @@ import { map } from 'rxjs/operators';
 import { User } from '../models/User';
 import { Menu } from '../models/Menu';
 import { Users } from '../models/Users';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -38,28 +37,44 @@ export class ApiService {
     }
   }
 
-  public  authenticationLogin(data: any) {
+  public signup(data:any){
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "auth/signup";
+    console.log(url);
+    return this.http.post<any>(url, JSON.stringify(data), {
+      headers: headers
+    })
+    .pipe(map(user => {
+      console.log('user',user);
+        if (user) {
+          // localStorage.setItem('currentUser', btoa(JSON.stringify(user)));
+          // this.currentUserSubject.next(user);
+        }
+
+        return user;
+    }));
+  }
+
+  public authenticationLogin(data: any) {
     var headers = new HttpHeaders({
       'Content-Type': 'application/json'
     })
     var url = this.apiUrl + "auth/signin";
     console.log(url);
-
-
-
-    // return await this.http.post(url, data, {
-    //   headers: headers
-    // }).subscribe((user: User) => {
-    //   if (user && user.accessToken) {
-    //     localStorage.setItem('currentUser', btoa(JSON.stringify(user)));
-    //     this.currentUserSubject.next(user);
-    //   }
-    //   return user;
-    // }, (error) => {
-    //   console.log(error);
-    //   return null;
-    // });
-
+    /* return await this.http.post(url, data, {
+      headers: headers
+    }).subscribe((user: User) => {
+      if (user && user.accessToken) {
+        localStorage.setItem('currentUser', btoa(JSON.stringify(user)));
+        this.currentUserSubject.next(user);
+      }
+      return user;
+    }, (error) => {
+      console.log(error);
+      return null;
+    }); */
     return this.http.post<any>(url, JSON.stringify(data), {
       headers: headers
     })
@@ -74,13 +89,21 @@ export class ApiService {
     }));
 
 
-
   }
 
   public async loadNavItems() {
-    /*var url = this.apiUrl + "common/menu/list/" + this.currentUserValue.authorities[0].authority;
-    return await this.http.post(url, "");*/
-    return await this.http.get("../assets/navItems.json");
+    var url = this.apiUrl + "common/menu/list/" + this.currentUserValue.authorities[0].authority;
+    return await this.http.post(url, "");
+  }
+
+  public async getManus(pageNo: any, size: any) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "common/menu/call/" + pageNo + "/" + size;
+    return await this.http.get(url, {
+      headers: headers
+    })
   }
 
   public async saveManu(menu: Menu) {

@@ -34,6 +34,7 @@ import { LocationComponent } from './component/location/location.component';
 import { PimsRankComponent } from './component/pims-rank/pims-rank.component';
 import { PimsPayScaleComponent } from './component/pims-pay-scale/pims-pay-scale.component';
 import { PostOfficeComponent } from './component/post-office/post-office.component';
+import { SignupComponent } from './component/signup/signup.component';
 const routes: Routes = [];
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ const routes: Routes = [];
     LocationComponent,
     PimsRankComponent,
     PimsPayScaleComponent,
-    PostOfficeComponent
+    PostOfficeComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,

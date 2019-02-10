@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './global/component/login/login.component';
+import { SignupComponent } from './global/component/signup/signup.component';
+
 import { ContainerComponent } from './global/component/container/container.component';
 import { DashboardComponent } from './global/component/dashboard/dashboard.component';
 import { AuthGuardService } from './global/guard/auth-guard.service';
@@ -19,6 +21,7 @@ import { PimsPayScaleComponent } from './global/component/pims-pay-scale/pims-pa
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  {path:'signup',component:SignupComponent},
   {
     path: 'admin', component: ContainerComponent, children: [
       {

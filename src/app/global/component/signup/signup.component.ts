@@ -8,36 +8,54 @@ import { User } from '../../models/User';
 import { Role } from '../../models/Role';
 
 export interface ILogin {
+  name:string;
   username: string;
+  email:string;
+  role:string;
   password: string;
 }
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+export class SignupComponent implements OnInit {
+
+  signupForm: FormGroup;
   validationMessages: any;
   error = '';
   loginModel:ILogin = {
+    name:"",
     username:"",
+    email:"",
+    role:"",
     password:""
   }
   returnUrl: any;
   constructor( private route: ActivatedRoute, public router:Router, public formBuilder: FormBuilder,public api: ApiService) { }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
+      name:['',[Validators.required]],
       username:['', [Validators.required]],
+      email:['',[Validators.required]],
+      role:['',[Validators.required]],
       password:['', Validators.required],
       rememberme:[false]
     })
     this.validationMessages = {
+      'name':[
+        {'type':'required',message:'This field is Required'}
+      ],
       'username': [
         {type: 'required', message: 'This field is Required'}
+      ],
+      'email':[
+        {type:'required',message:'This field is Required'}
+      ],
+      'role':[
+        {type:'required',message:'This field is Required'}
       ],
       'password': [
         {type: 'required', message: 'This field is Required'}
@@ -53,59 +71,34 @@ export class LoginComponent implements OnInit {
 
   onKeyPressLogin(event : any){
     if(event.key == "Enter"){
-      this.login(this.loginForm);
+      this.signup(this.signupForm);
     }
   }
 
-  async login(loginForm:FormGroup) {
-    if(loginForm.valid){
-      this.loginModel = loginForm.value;
-      if(loginForm.value.rememberme){
-        localStorage.setItem('username', window.btoa(loginForm.value.username));
-        localStorage.setItem('password', window.btoa(loginForm.value.password));
-        localStorage.setItem('rememberme', window.btoa(loginForm.value.rememberme));
-      }else{
-        localStorage.removeItem("username");
-        localStorage.removeItem("password");
-        localStorage.removeItem("rememberme");
-      }
-      console.log(this.loginModel);
+  async signup(signupForm:FormGroup) {
+    if(signupForm.valid){
+      console.log(signupForm.value);
 
 
-      this.api.authenticationLogin(this.loginModel)
+      this.api.signup({
+      "name":signupForm.value.name,
+      "username":signupForm.value.username,
+      "email":signupForm.value.email,
+      "role":signupForm.value.role,
+      "password":signupForm.value.password
+      })
       //.pipe(first())
       .subscribe(
           data => {
-            this.router.navigate(['/admin/dashboard']);
+            this.router.navigate(['/login']);
           },
           error => {
             console.log(error);
             console.log(error.error.message);
             this.error = "Invalid Credentials"
-            //  this.loading = false;
           });
-
-
-      // let result = await this.api.authenticationLogin(this.loginModel);
-      // let currentUser:User = this.api.currentUserValue;
-      // if (currentUser) {
-      //   let role;
-      //   if(currentUser.authorities.length != 0) {
-      //     role = currentUser.authorities[0];
-      //   }
-      //   if (role.authority == Role.Admin) {
-      //       this.router.navigate(['/admin/dashboard']);
-      //   }else{
-      //       this.router.navigate(['/user/dashboard']);
-      //   }
-      // }
-
-
-
     }
   }
 
-  signup(){
-    this.router.navigate(['/signup']);
-  }
+
 }
