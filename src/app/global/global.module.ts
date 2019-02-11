@@ -15,6 +15,7 @@ import { SidebarMinimizeDirective } from './directive/sidebar-minimize.directive
 import { SidebarOffCanvasCloseDirective } from './directive/sidebar-off-canvas-close.directive';
 import { SidebarToggleDirective } from './directive/sidebar-toggle.directive';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -114,6 +115,7 @@ const routes: Routes = [];
     HttpClientModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
     RouterModule.forChild(routes),
     ToastModule,
     ConfirmDialogModule,
