@@ -9,11 +9,11 @@ import { Children } from '../../../models/Children';
   styleUrls: ['./children.component.scss']
 })
 export class ChildrenComponent implements OnInit {
-  awardForm:FormGroup;
+  childrenForm:FormGroup;
   validationMessages: any;
   children:Children;
 
-  awardData = [{
+  childrenData = [{
     id: 1,
     parent_id: 1,
     name: 'Name',
@@ -27,7 +27,7 @@ export class ChildrenComponent implements OnInit {
   constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.awardForm = this.formBuilder.group({
+    this.childrenForm = this.formBuilder.group({
       name:['', [Validators.required]],
       name_native:['', Validators.required],
       keyword:['', Validators.required],
