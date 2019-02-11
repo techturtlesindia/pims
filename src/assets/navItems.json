@@ -17,6 +17,98 @@
     ]
   },
   {
+    "name": "Entry",
+    "url": "entry/additionalqualification",
+    "icon": "icon-user",
+    "children": [
+      {
+        "name": "Additional Qualification",
+        "url": "entry/additionalqualification",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Award",
+        "url": "entry/award",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Children",
+        "url": "entry/children",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Disciplinary",
+        "url": "entry/disciplinary",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Educational",
+        "url": "entry/educational",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Foreigntraining",
+        "url": "entry/foreigntraining",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Foreigntravel",
+        "url": "entry/foreigntravel",
+        "icon": "icon-user"
+      },
+      {
+        "name": "General",
+        "url": "entry/general",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Language",
+        "url": "entry/language",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Leave",
+        "url": "entry/leave",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Local",
+        "url": "entry/local",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Magisterial",
+        "url": "entry/magisterial",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Professional",
+        "url": "entry/professional",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Publication",
+        "url": "entry/publication",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Senior",
+        "url": "entry/senior",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Service",
+        "url": "entry/service",
+        "icon": "icon-user"
+      },
+      {
+        "name": "Spouse",
+        "url": "entry/spouse",
+        "icon": "icon-user"
+      }
+    ]
+  },
+  {
     "name": "General Information",
     "url": "general",
     "icon": "icon-notebook"
@@ -28,27 +120,27 @@
   },
   {
     "name": "Lookup",
-    "url": "lookup",
+    "url": "master/lookup",
     "icon": "icon-notebook"
   },
   {
     "name": "Location",
-    "url": "location",
+    "url": "master/location",
     "icon": "icon-notebook"
   },
   {
     "name": "Pmis Rank",
-    "url": "ranks",
+    "url": "master/ranks",
     "icon": "icon-notebook"
   },
   {
     "name": "Post Office",
-    "url": "postoffice",
+    "url": "master/postoffice",
     "icon": "icon-notebook"
   },
   {
     "name": "Pims Pay Scale",
-    "url": "payscale",
+    "url": "master/payscale",
     "icon": "icon-notebook"
   },
   {

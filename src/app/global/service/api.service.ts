@@ -133,6 +133,9 @@ export class ApiService {
   }
 
   public async loadNavItems() {
+    // var url = this.apiUrl + "common/menu/list/" + this.currentUserValue.authorities[0].authority;
+    // return await this.http.post(url, "");
+    return await this.http.get("../assets/navItems.json");
     var url = this.apiUrl + "common/menu/list/" + this.currentUserValue.authorities[0].authority;
     return await this.http.post(url, "");
   }

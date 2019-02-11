@@ -34,7 +34,7 @@ export class SidebarComponent implements OnInit {
   }
 
   get isAdmin() {
-    if (this.currentUser.authorities.length != 0) {
+    if(this.currentUser.authorities.length != 0) {
       return this.currentUser && this.currentUser.authorities[0].authority === Role.Admin;
     }
   }
@@ -44,9 +44,10 @@ export class SidebarComponent implements OnInit {
   }
 
   async loadMenu() {
-    await this.authenticationService.loadNavItems().then(value => {
-      value.subscribe(result => {
-        this.navItems = result;
+    await this.authenticationService.loadNavItems().then(value=>{
+      value.subscribe(result=>{
+       this.navItems = result;
+       console.log(this.navItems);
       })
     })
   }
@@ -85,7 +86,7 @@ export class AppSidebarNavItemComponent {
   }
 
   public isDropdown() {
-    return this.item.childmenu.length != 0 ? true : false;
+    return this.item.children ? true : false;
   }
 
   public thisUrl() {
@@ -158,7 +159,7 @@ export class AppSidebarNavLinkComponent {
       <span *ngIf="isBadge()" [ngClass]="'badge badge-' + link.badge.variant">{{ link.badge.text }}</span>
     </a>
     <ul class="nav-dropdown-items">
-      <ng-template ngFor let-child [ngForOf]="link.childmenu">
+      <ng-template ngFor let-child [ngForOf]="link.children">
         <app-sidebar-nav-item [item]='child'></app-sidebar-nav-item>
       </ng-template>
     </ul>
