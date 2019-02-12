@@ -184,6 +184,17 @@ export class ApiService {
     })
   }
 
+
+  public async getLookup(pageNo: any, size: any) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    var url = this.apiUrl + "pmislookup/lookup" + pageNo + "/" + size;
+    return await this.http.get(url, {
+      headers: headers
+    })
+  }
+
   public async saveLookup(lookup: Lookup) {
     var headers = new HttpHeaders({
       'Content-Type': 'application/json'

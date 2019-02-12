@@ -3,7 +3,7 @@ export class Menu {
     "name": string;
     "url": string;
     "icon": string;
-    "childmenu": [];
+    "childmenu": number;
     "isactive": string;
     "rolename": string;
     "enterby": string;
