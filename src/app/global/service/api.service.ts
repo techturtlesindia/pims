@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/User';
 import { Menu } from '../models/Menu';
+import { Lookup } from '../models/Lookup';
 import { Users } from '../models/Users';
 @Injectable({
   providedIn: 'root'
@@ -160,6 +161,10 @@ export class ApiService {
     })
   }
 
+
+
+
+
   public async deleteManu(row: Menu) {
     var headers = new HttpHeaders({
     })
@@ -175,6 +180,22 @@ export class ApiService {
     })
     var url = this.apiUrl + "common/menu/update";
     return await this.http.put(url, menu, {
+      headers: headers
+    })
+  }
+
+  public async saveLookup(lookup: Lookup) {
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+
+    lookup.parent_id= 1;
+   
+
+   var data =  JSON.stringify(lookup)
+    console.log(data);
+    var url = this.apiUrl + "pmislookup/lookup";
+    return await this.http.post(url, lookup, {
       headers: headers
     })
   }

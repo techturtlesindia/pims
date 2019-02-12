@@ -1,3 +1,5 @@
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 <div class="animated fadeIn">
   <form [formGroup]="lookupForm" method="post" class="form-horizontal">
     <div class="row">
@@ -124,10 +126,10 @@
           </div>
 
           <div class="card-footer">
-            <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!lookupForm.valid" (click)="saveDocuments(lookupForm)">
-              <i class="fa fa-dot-circle-o"></i> Save
-            </button>
-          </div>
+              <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!lookupForm.valid" (click)="saveLookups(lookupForm)">
+                <i class="fa fa-dot-circle-o"></i> Save
+              </button>
+            </div>
 
           <div class="card-body">
             <div class="row">
@@ -147,20 +149,21 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr role="row" class="odd" *ngFor="let lookup of lookupData">
-                      <td>{{lookup.parent_id}}</td>
-                      <td>{{lookup.name}}</td>
-                      <td>{{lookup.name_native}}</td>
-                      <td>{{lookup.keyword}}</td>
-                      <td>{{lookup.abbreviation}}</td>
-                      <td>{{lookup.abbreviation_native}}</td>
-                      <td>{{lookup.si_no}}</td>
-                      <td>{{lookup.isActive}}</td>
+                    
+                    <tr role="row" [ngClass]="i % 2 == 0 ? 'even':'odd'" *ngFor="let item of lookups;let i = index">
+                      <td>{{item.parent_id}}</td>
+                      <td>{{item.name}}</td>
+                      <td>{{item.name_native}}</td>
+                      <td>{{item.keyword}}</td>
+                      <td>{{item.abbreviation}}</td>
+                      <td>{{item.abbreviation_native}}</td>
+                      <td>{{item.si_no}}</td>
+                      <td>{{item.isActive}}</td>
                       <td>
                         <a class="btn btn-success" href="#">
                           <i class="fa fa-search-plus"></i>
                         </a>
-                        <a class="btn btn-info" href="#">
+                        <a class="btn btn-info" (click)="editRow(item)">
                           <i class="fa fa-edit"></i>
                         </a>
                         <a class="btn btn-danger" href="#">
