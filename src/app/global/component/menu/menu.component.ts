@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit {
   validationMessages: any;
   menu: Menu;
   menus: Menu[] = [{
+    "id":1,
     "name": "Dashboard",
     "url": "dashboard",
     "icon": "icon-notebook",
@@ -26,6 +27,7 @@ export class MenuComponent implements OnInit {
     "enterby": "sanjay",
     "isparent": "1",
   }, {
+    "id":2,
     "name": "Documents",
     "url": "documents",
     "icon": "icon-file",
@@ -35,6 +37,7 @@ export class MenuComponent implements OnInit {
     "enterby": "sanjay",
     "isparent": "1",
   }, {
+    "id":3,
     "name": "User",
     "url": "user",
     "icon": "icon-user",
