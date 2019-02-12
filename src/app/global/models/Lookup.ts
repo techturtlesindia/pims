@@ -12,5 +12,8 @@ export class Lookup {
     "created_by":string;
     "created_date":string;
     "update_by":string;
-	"update_date":string;
+    "update_date":string;
+    "enterby": string;
+    "rolename": string;
+    "type" : string;
 }
