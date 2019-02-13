@@ -2,7 +2,37 @@
   <tabset>
     <tab heading="Disciplinary" id="tab1">
  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="card-body">
-        <div class="row">
+                      
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Disciplinary</strong>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal" action="" method="post">							
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="remarks">Search By Employee Code</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input class="form-control" id="input2-group2" type="email" name="input2-group2" placeholder="Search By Employee Code">
+                                                <span class="input-group-append">
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </span>
+                                              </div> 
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </form>
+                   </div>
+                </div>
+            </div>
+        </div>
+		 <div class="row">
           <div class="col-sm-12">
             <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
               <thead>
@@ -61,6 +91,10 @@
             </div>
           </div>
         </div>
+	</div>
+  
+
+                      
       </div></div>
 
     </tab>
@@ -76,124 +110,143 @@
             <strong>Disciplinary</strong>
           </div>
           <div class="card-body">
-            
             <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Name</label>
-                  <div class="col-md-9">
-                    <input formControlName="name" class="form-control" id="name" name="name" type="text" placeholder="Enter Name">
-                    <div *ngFor="let validation of validationMessages.name">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name', disciplinaryForm)" >{{validation.message}}</span>
-                    </div>
-                  </div>
+              <div class="col-sm-12 col-md-6">
+
+              </div>
+              <div class="col-sm-12 col-md-6">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
+
+                  <tr>
+                    <th>Employee Code:</th>
+                    <td>
+                      <input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="DataTables_Table_0">
+                    </td>
+                    <th></th>
+                    <td> </td>
+                  </tr>
+
+                  <tr>
+                    <th>Name:</th>
+                    <td></td>
+                    <th>Rank:</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Designation:</th>
+                    <td></td>
+                    <th>Organisation:</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Location:</th>
+                    <td></td>
+                    <th>SPDB:</th>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <strong>Add New Disciplinary Action</strong>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="name">Go Date</label>
+                  <input class="form-control" id="go_date" name="go_date" type="text" placeholder="Enter Go Date">
                 </div>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-6">
 
               </div>
             </div>
+
             <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Name Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="name_native" class="form-control" id="name_native" name="name_native" type="text" placeholder="Enter Name Native">
-                    <div *ngFor="let validation of validationMessages.name_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name_native', disciplinaryForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="name">Offence</label>
+                  <select class="form-control" id="offence" name="offence">
+                    <option selected="selected">Select Offence</option>
+                  </select>
                 </div>
               </div>
-              <div class="col-sm-4">
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="name">Nature of Punishment</label>
+                  <select class="form-control" id="nature_of_punishment" name="nature_of_punishment">
+                    <option selected="selected">Select Nature of Punishment</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="name">Punishment Line 1</label>
+                  <input class="form-control" id="punishment_line1" name="punishment_line1" type="text" placeholder="Enter Punishment Line 1">
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Keyword</label>
-                  <div class="col-md-9">
-                    <input formControlName="keyword" class="form-control" id="keyword" name="keyword" type="text" placeholder="Enter Keyword">
-                    <div *ngFor="let validation of validationMessages.keyword">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'keyword', disciplinaryForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="name">Punishment Line 2</label>
+                  <input class="form-control" id="punishment_line2" name="punishment_line2" type="text" placeholder="Enter Punishment Line 2">
                 </div>
               </div>
-              <div class="col-sm-4">
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
               </div>
             </div>
+
             <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation" class="form-control" id="abbreviation" name="abbreviation" type="text" placeholder="Enter Abbreviation">
-                    <div *ngFor="let validation of validationMessages.abbreviation">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation', disciplinaryForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="name">Remarks</label>
+                  <input class="form-control" id="remarks" name="remarks" type="text" placeholder="Enter Remarks">
                 </div>
               </div>
-              <div class="col-sm-4">
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation_native" class="form-control" id="abbreviation_native" name="abbreviation_native" type="text" placeholder="Enter Abbreviation Native">
-                    <div *ngFor="let validation of validationMessages.abbreviation_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation_native', disciplinaryForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">SI No</label>
-                  <div class="col-md-9">
-                    <input formControlName="si_no" class="form-control" id="si_no" name="si_no" type="text" placeholder="Enter SI No">
-                    <div *ngFor="let validation of validationMessages.si_no">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'si_no', disciplinaryForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
-                  <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name">IsActive</label>
-                    <div class="col-md-9">
-                      <select formControlName="isActive" class="form-control" id="isActive" name="isActive">
-                        <option selected="selected">Select IsActive Type</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                      </select>
-                      <div *ngFor="let validation of validationMessages.isActive">
-                        <span class="help-block" *ngIf="hasValidationError(validation, 'isActive', disciplinaryForm)" >{{validation.message}}</span>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                </div>
-              </div>
-            
           </div>
 
           <div class="card-footer">
-            <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!disciplinaryForm.valid" (click)="saveDocuments(disciplinaryForm)">
-              <i class="fa fa-dot-circle-o"></i> Save
+            <button class="btn btn-sm btn-success float-right" type="submit">
+              <i class="fa fa-dot-circle-o"></i> Save & Process
             </button>
           </div>
         </div>

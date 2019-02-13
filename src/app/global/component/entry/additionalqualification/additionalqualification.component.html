@@ -1,67 +1,97 @@
 <div>
   <tabset>
     <tab heading="Additional Qualification" id="tab1">
- <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="card-body">
-        <div class="row">
-          <div class="col-sm-12">
-            <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
-              <thead>
-                <tr role="row">
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 150px;">Parent Id</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 130px;">Name</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">Name Native</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Keyword</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Abbreviation</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Abbreviation Native</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">SI No</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">IsActive</th>
-                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 180px;">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr role="row" class="odd" *ngFor="let additionalqualification of additionalqualificationData">
-                  <td>{{additionalqualification.parent_id}}</td>
-                  <td>{{additionalqualification.name}}</td>
-                  <td>{{additionalqualification.name_native}}</td>
-                  <td>{{additionalqualification.keyword}}</td>
-                  <td>{{additionalqualification.abbreviation}}</td>
-                  <td>{{additionalqualification.abbreviation_native}}</td>
-                  <td>{{additionalqualification.si_no}}</td>
-                  <td>{{additionalqualification.isActive}}</td>
-                  <td>
-                    <a class="btn btn-success" href="#">
-                      <i class="fa fa-search-plus"></i>
-                    </a>
-                    <a class="btn btn-info" href="#">
-                      <i class="fa fa-edit"></i>
-                    </a>
-                    <a class="btn btn-danger" href="#">
-                      <i class="fa fa-trash-o"></i>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-5">
-            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 32 entries</div>
-          </div>
-          <div class="col-sm-12 col-md-7">
-            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-              <ul class="pagination">
-                <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
-                <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">Next</a></li>
-              </ul>
+ <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">                     
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Additional Qualification</strong>
             </div>
-          </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal" action="" method="post">							
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="remarks">Search By Employee Code</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input class="form-control" id="input2-group2" type="email" name="input2-group2" placeholder="Search By Employee Code">
+                                                <span class="input-group-append">
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </span>
+                                              </div> 
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div></div>
+		  <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
+                <thead>
+                    <tr role="row">
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 150px;">Parent Id</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 130px;">Name</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">Name Native</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Keyword</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Abbreviation</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Abbreviation Native</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">SI No</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">IsActive</th>
+                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 180px;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr role="row" class="odd" *ngFor="let additionalqualification of additionalqualificationData">
+                        <td>{{additionalqualification.parent_id}}</td>
+                        <td>{{additionalqualification.name}}</td>
+                        <td>{{additionalqualification.name_native}}</td>
+                        <td>{{additionalqualification.keyword}}</td>
+                        <td>{{additionalqualification.abbreviation}}</td>
+                        <td>{{additionalqualification.abbreviation_native}}</td>
+                        <td>{{additionalqualification.si_no}}</td>
+                        <td>{{additionalqualification.isActive}}</td>
+                        <td>
+                            <a class="btn btn-success" href="#">
+                                <i class="fa fa-search-plus"></i>
+                            </a>
+                            <a class="btn btn-info" href="#">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger" href="#">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-5">
+            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 32 entries</div>
+        </div>
+        <div class="col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                    <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                    <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">Next</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>  
+ </div>
 
     </tab>
 
@@ -76,123 +106,108 @@
             <strong>Additional Qualification</strong>
           </div>
           <div class="card-body">
-            <strong>Additional Qualification</strong>
             <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Name</label>
-                  <div class="col-md-9">
-                    <input formControlName="name" class="form-control" id="name" name="name" type="text" placeholder="Enter Name">
-                    <div *ngFor="let validation of validationMessages.name">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name', additionalqualificationForm)" >{{validation.message}}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-4">
+              <div class="col-sm-12 col-md-6">
 
               </div>
+              <div class="col-sm-12 col-md-6">
+              </div>
             </div>
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-sm-12">
+                <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
+
+                  <tr>
+                    <th>Employee Code:</th>
+                    <td>
+                      <input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="DataTables_Table_0">
+                    </td>
+                    <th></th>
+                    <td> </td>
+                      <td></td>
+                  </tr>
+
+                  <tr>
+                    <th>Name:</th>
+                    <td></td>
+                    <th>Rank:</th>
+                    <td></td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <th>Designation:</th>
+                    <td></td>
+                    <th>Organisation:</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Location:</th>
+                    <td></td>
+                    <th>SPDB:</th>
+                    <td>LPDS</td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
                 <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Name Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="name_native" class="form-control" id="name_native" name="name_native" type="text" placeholder="Enter Name Native">
-                    <div *ngFor="let validation of validationMessages.name_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name_native', additionalqualificationForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Keyword</label>
-                  <div class="col-md-9">
-                    <input formControlName="keyword" class="form-control" id="keyword" name="keyword" type="text" placeholder="Enter Keyword">
-                    <div *ngFor="let validation of validationMessages.keyword">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'keyword', additionalqualificationForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation" class="form-control" id="abbreviation" name="abbreviation" type="text" placeholder="Enter Abbreviation">
-                    <div *ngFor="let validation of validationMessages.abbreviation">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation', additionalqualificationForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation_native" class="form-control" id="abbreviation_native" name="abbreviation_native" type="text" placeholder="Enter Abbreviation Native">
-                    <div *ngFor="let validation of validationMessages.abbreviation_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation_native', additionalqualificationForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">SI No</label>
-                  <div class="col-md-9">
-                    <input formControlName="si_no" class="form-control" id="si_no" name="si_no" type="text" placeholder="Enter SI No">
-                    <div *ngFor="let validation of validationMessages.si_no">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'si_no', additionalqualificationForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
-                  <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name">IsActive</label>
+                  <label class="col-md-3 col-form-label" for="name">Qualification Serial</label>
                     <div class="col-md-9">
-                      <select formControlName="isActive" class="form-control" id="isActive" name="isActive">
-                        <option selected="selected">Select IsActive Type</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                      </select>
-                      <div *ngFor="let validation of validationMessages.isActive">
-                        <span class="help-block" *ngIf="hasValidationError(validation, 'isActive', additionalqualificationForm)" >{{validation.message}}</span>
-                    </div>
-                    </div>
+                  <input class="form-control" id="qualification_serial" id="qualification_serial" type="text" placeholder="Enter Qualification Serial">
+                        <span class="help-block">Please Enter Qualification Serial</span>
                   </div>
                 </div>
-                <div class="col-sm-4">
+              </div>
+
+              <div class="col-sm-6">
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Additional Qualification</label>
+                    <div class="col-md-9">
+                  <input class="form-control" id="additional_qualification" name="additional_qualification" type="text" placeholder="Enter Additional Qualification">
+                        <span class="help-block">Please Enter Additional Qualification</span>
+                  </div>
                 </div>
               </div>
-            
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Remarks</label>
+                    <div class="col-md-9">
+                  <input class="form-control" name="remarks" id="remarks" type="text" placeholder="Enter Remarks">
+                        <span class="help-block">Please Enter Remarks</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div class="card-footer">
-            <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!additionalqualificationForm.valid" (click)="saveDocuments(additionalqualificationForm)">
+            <button class="btn btn-sm btn-success float-right" type="submit">
               <i class="fa fa-dot-circle-o"></i> Save
             </button>
           </div>

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguageComponent } from './language.component';
 
-describe('LanguageComponent', () => {
+describe('GeneralComponent', () => {
   let component: LanguageComponent;
   let fixture: ComponentFixture<LanguageComponent>;
 

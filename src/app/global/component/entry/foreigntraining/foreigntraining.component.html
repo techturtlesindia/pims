@@ -1,8 +1,38 @@
 <div>
   <tabset>
-    <tab heading="Foreigntraining" id="tab1">
+    <tab heading="Foreign Training" id="tab1">
  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="card-body">
-        <div class="row">
+                       
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Foreign Training</strong>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal" action="" method="post">							
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="remarks">Search By Employee Code</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input class="form-control" id="input2-group2" type="email" name="input2-group2" placeholder="Search By Employee Code">
+                                                <span class="input-group-append">
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </span>
+                                              </div> 
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </form>
+                   </div>
+                </div>
+            </div>
+        </div>
+		<div class="row">
           <div class="col-sm-12">
             <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
               <thead>
@@ -61,6 +91,10 @@
             </div>
           </div>
         </div>
+	</div>
+  
+
+                      
       </div></div>
 
     </tab>
@@ -73,129 +107,138 @@
       <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
-            <strong>Foreigntraining</strong>
+            <strong>Foreign Training</strong>
           </div>
           <div class="card-body">
-           
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Name</label>
-                  <div class="col-md-9">
-                    <input formControlName="name" class="form-control" id="name" name="name" type="text" placeholder="Enter Name">
-                    <div *ngFor="let validation of validationMessages.name">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name', foreigntrainingForm)" >{{validation.message}}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-4">
-
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Name Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="name_native" class="form-control" id="name_native" name="name_native" type="text" placeholder="Enter Name Native">
-                    <div *ngFor="let validation of validationMessages.name_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name_native', foreigntrainingForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Keyword</label>
-                  <div class="col-md-9">
-                    <input formControlName="keyword" class="form-control" id="keyword" name="keyword" type="text" placeholder="Enter Keyword">
-                    <div *ngFor="let validation of validationMessages.keyword">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'keyword', foreigntrainingForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation" class="form-control" id="abbreviation" name="abbreviation" type="text" placeholder="Enter Abbreviation">
-                    <div *ngFor="let validation of validationMessages.abbreviation">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation', foreigntrainingForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation_native" class="form-control" id="abbreviation_native" name="abbreviation_native" type="text" placeholder="Enter Abbreviation Native">
-                    <div *ngFor="let validation of validationMessages.abbreviation_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation_native', foreigntrainingForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">SI No</label>
-                  <div class="col-md-9">
-                    <input formControlName="si_no" class="form-control" id="si_no" name="si_no" type="text" placeholder="Enter SI No">
-                    <div *ngFor="let validation of validationMessages.si_no">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'si_no', foreigntrainingForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
+              <div class="row">
+                <div class="col-sm-6">
                   <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name">IsActive</label>
-                    <div class="col-md-9">
-                      <select formControlName="isActive" class="form-control" id="isActive" name="isActive">
-                        <option selected="selected">Select IsActive Type</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                      </select>
-                      <div *ngFor="let validation of validationMessages.isActive">
-                        <span class="help-block" *ngIf="hasValidationError(validation, 'isActive', foreigntrainingForm)" >{{validation.message}}</span>
-                    </div>
+                    <label class="col-md-3 col-form-label" for="name">Country</label>
+                      <div class="col-md-9">
+                    <select class="form-control" id="country" name="country">
+                      <option selected="selected">Select Country</option>
+                    </select>
+                          <span class="help-block">Please Select Country</span>
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4">
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+
+                  </div>
                 </div>
               </div>
-            
-          </div>
 
-          <div class="card-footer">
-            <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!foreigntrainingForm.valid" (click)="saveDocuments(foreigntrainingForm)">
-              <i class="fa fa-dot-circle-o"></i> Save
-            </button>
-          </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Title</label>
+                      <div class="col-md-9">
+                    <input class="form-control" id="title" name="title" type="text" placeholder="Enter Title">
+                          <span class="help-block">Please Enter Title</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Institution</label>
+                      <div class="col-md-9">
+                    <select class="form-control" id="institution" name="institution">
+                      <option selected="selected">Select Institution</option>
+                    </select>
+                          <span class="help-block">Please Select Institution</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">If Select Other from Institution, then textbox</label>
+                      <div class="col-md-9">
+                    <input class="form-control" id="other_institution" name="other_institution" type="text" placeholder="Enter Institution">
+                          <span class="help-block">Please Enter Institution</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Start Date</label>
+                      <div class="col-md-9">
+                    <input class="form-control" id="start_date" name="start_date" type="text" placeholder="Enter Date">
+                          <span class="help-block">Please Enter Date</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">End Date</label>
+                      <div class="col-md-9">
+                    <input class="form-control" id="end_date" name="end_date" type="text" placeholder="Enter Date">
+                          <span class="help-block">Please Enter Date</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Duration</label>
+                      <div class="col-md-9">
+                    <input class="form-control" id="duration" name="duration" type="text" placeholder="Enter Duration">
+                          <span class="help-block">Please Enter Duration</span>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Batch</label>
+                      <div class="col-md-9">
+                    <select class="form-control" id="batch" name="batch">
+                      <option selected="selected">Select Batch</option>
+                    </select>
+                          <span class="help-block">Please Select Batch</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="name">Remarks</label>
+                      <div class="col-md-9">
+                      <textarea class="form-control" id="remarks" name="remarks" rows="3" placeholder="Enter Remarks ....."></textarea>
+                          <span class="help-block">Please Enter Remarks</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="card-footer">
+              <button class="btn btn-sm btn-success float-right" type="submit">
+                <i class="fa fa-dot-circle-o"></i> Save
+              </button>
+            </div>
         </div>
       </div>
 

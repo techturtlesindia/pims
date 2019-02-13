@@ -1,3 +1,588 @@
-<p>
-  general works!
-</p>
+<div>
+  <tabset>
+    <tab heading="General Information" id="tab1">
+ <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="card-body">
+        
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>General Information</strong>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal" action="" method="post">							
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="remarks">Search By Employee Code</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input class="form-control" id="input2-group2" type="email" name="input2-group2" placeholder="Search By Employee Code">
+                                                <span class="input-group-append">
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </span>
+                                              </div> 
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </form>
+                   </div>
+                </div>
+            </div>
+        </div>
+		  <div class="row">
+          <div class="col-sm-12">
+            <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
+              <thead>
+                <tr role="row">
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 150px;">Parent Id</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 130px;">Name</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">Name Native</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Keyword</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Abbreviation</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">Abbreviation Native</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 98px;">SI No</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 138px;">IsActive</th>
+                  <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 180px;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr role="row" class="odd" *ngFor="let award of awardData">
+                  <td>{{award.parent_id}}</td>
+                  <td>{{award.name}}</td>
+                  <td>{{award.name_native}}</td>
+                  <td>{{award.keyword}}</td>
+                  <td>{{award.abbreviation}}</td>
+                  <td>{{award.abbreviation_native}}</td>
+                  <td>{{award.si_no}}</td>
+                  <td>{{award.isActive}}</td>
+                  <td>
+                    <a class="btn btn-success" href="#">
+                      <i class="fa fa-search-plus"></i>
+                    </a>
+                    <a class="btn btn-info" href="#">
+                      <i class="fa fa-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" href="#">
+                      <i class="fa fa-trash-o"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+		<div class="row">
+          <div class="col-sm-12 col-md-5">
+            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 32 entries</div>
+          </div>
+          <div class="col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+              <ul class="pagination">
+                <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">Next</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+	</div>
+  
+
+      </div>
+    </div>
+    </tab>
+
+    <tab heading="Create New">
+<div>
+<form [formGroup]="awardForm" class="form-horizontal">
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>General Information</strong>
+          </div>
+           <div class="card-body">
+            <form action="" method="post" class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="govt_id">Govt Id</label>
+                                <div class="col-md-9">
+                                    <select name="govt_id" class="form-control">
+                                        <option value="0">Select Govt Id</option>
+                                        <option value="Govt Id1">Govt Id 1</option>
+                                        <option value="Govt Id2">Govt Id 2</option>
+                                        <option value="Govt Id3">Govt Id 3</option>
+                                      </select>
+                                    <span class="help-block">Please select your Govt Id</span>
+                                </div>
+                        </div>
+                    </div>
+					<div class="col-md-6">
+					    <div class="form-group row">
+						  <label class="col-md-3 col-form-label" for="profilepic">Photo Upload</label>
+						  <div class="col-md-9">
+							<input type="file" name="profilepic">
+						  </div>
+                        </div>
+					</div>
+            </div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="col-md-3 col-form-label" for="name_english">Name (English)</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="name_english" placeholder="Name(English)">
+							<span class="help-block">Please enter your Name (English)</span>
+						</div>
+					</div>
+                </div>
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="col-md-3 col-form-label" for="name_bangla">Name (Bangla)</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="name_bangla" placeholder="Name(Bangla)">
+							<span class="help-block">Please enter your Name (Bangla)</span>
+						</div>
+					  </div>
+				  </div>
+            </div>
+            <div class="row">
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="col-md-3 col-form-label" for="fathername_english">Father's Name(English)</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="fathername_english" placeholder="Father's Name(English)">
+							<span class="help-block">Please enter your Father's Name(English)</span>
+						</div>
+					</div>
+                </div>
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="col-md-3 col-form-label" for="fathername_bangla">Father's Name(Bangla)</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="fathername_bangla" placeholder="Father's Name(Bangla)">
+							<span class="help-block">Please enter your Father's Name(Bangla)</span>
+						</div>
+					  </div>
+				  </div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="col-md-3 col-form-label" for="mothername_english">Mother's Name(English)</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="mothername_english" placeholder="Mother's Name(English)">
+							<span class="help-block">Please enter your Mother's Name(English)</span>
+						</div>
+					</div>
+                </div>
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="col-md-3 col-form-label" for="mothername_bangla">Mother's Name(Bangla)</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="mothername_bangla" placeholder="Mother's Name(Bangla)">
+							<span class="help-block">Please enter your Mother's Name(Bangla)</span>
+						</div>
+					  </div>
+				  </div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="col-md-3 col-form-label" for="dateofbirth">Date of Birth</label>
+						<div class="col-md-9">
+							<input class="form-control" type="date" name="dateofbirth" placeholder="date">
+							<span class="help-block">Please enter your Date of Birth</span>
+						</div>
+					</div>
+                </div>
+				<div class="col-md-6">
+                        <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="sex">Sex</label>
+                                <div class="col-md-9">
+                                    <select name="sex" class="form-control">
+                                        <option value="0">Select Sex</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+                                      </select>
+                                    <span class="help-block">Please select your sex</span>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                            <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="prefix_name">Prefix Name</label>
+                                    <div class="col-md-9">
+                                        <select name="prefix_name" class="form-control">
+                                            <option value="0">Select Prefix Name</option>
+                                            <option value="Prefix Name1">Prefix Name 1</option>
+                                            <option value="Prefix Name2">Prefix Name 2</option>
+                                          </select>
+                                        <span class="help-block">Please select your Prefix Name</span>
+                                    </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                            <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="suffix_name">Suffix Name</label>
+                                    <div class="col-md-9">
+                                        <select name="suffix_name" class="form-control">
+                                            <option value="0">Select Suffix Name</option>
+                                            <option value="Suffix Name1">Suffix Name 1</option>
+                                            <option value="Suffix Name2">Suffix Name 2</option>
+                                            <option value="Suffix Name3">Suffix Name 3</option>
+                                          </select>
+                                        <span class="help-block">Please select your Suffix Name</span>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                            <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="marital_status">Marital Status</label>
+                                    <div class="col-md-9">
+                                        <select name="marital_status" class="form-control">
+                                            <option value="0">Select Marital Status</option>
+                                            <option value="Unmarried">Unmarried</option>
+                                            <option value="Married">Married</option>
+                                            <option value="Seprate">Seprate</option>
+                                            <option value="Divorce">Divorce</option>
+                                          </select>
+                                        <span class="help-block">Please select your Marital Status</span>
+                                    </div>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="home_district">Home District</label>
+                            <div class="col-md-9">
+                                <select name="home_district" class="form-control">
+                                    <option value="0">Select Home District</option>
+                                    <option value="Home District1">Home District 1</option>
+                                    <option value="Home District2">Home District 2</option>
+                                  </select>
+                                <span class="help-block">Please select your Home District</span>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="religion">Religion</label>
+                            <div class="col-md-9">
+                                <select name="religion" class="form-control">
+                                    <option value="0">Select Religion</option>
+                                    <option value="Hindu">Hindu</option>
+                                    <option value="Muslim">Muslim</option>
+                                    <option value="Sikh">Sikh</option>
+                                    <option value="Christan">Christan</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                                <span class="help-block">Please select your Religion</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="rank">Rank</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="rank" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Rank</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="designation">Designation</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="designation" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Designation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="location">Location</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="location" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Location</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="organization">Organization</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="organization" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Organization</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="orderorjoin_type">Order/Join Type</label>
+                            <div class="col-md-9">
+                                <select name="orderorjoin_type" class="form-control">
+                                    <option value="0">Select Order/Join Type</option>
+                                    <option value="Order/Join Type1">Order/Join Type1</option>
+                                    <option value="Order/Join Type2">Order/Join Type2</option>
+                                    <option value="Order/Join Type3">Order/Join Type3</option>
+                                </select>
+                                <span class="help-block">Please select your Order/Join Type</span>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="oorj_date">O/J Date</label>
+                            <div class="col-md-9">
+                                <input type="date" class="form-control" name="oorj_date" placeholder="date">
+                                <span class="help-block">Please enter your O/J Date</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="freedom_fighter">Freedom Fighter</label>
+                            <div class="col-md-3">
+                                <select name="freedom_fighter" class="form-control">
+                                    <option value="0">Yes/No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <span class="help-block">Please select your Freedom Fighter</span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="freedom_fighterifyes" readonly placeholder="if yes">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="prl_date">PRL Date</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="prl_date" readonly placeholder="Label">
+                                <span class="help-block">Please enter your PRL Date</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="noofspouse">No. of Spouse</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="noofspouse" readonly placeholder="Label">
+                                <span class="help-block">Please enter your No. of Spouse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="batch">Batch</label>
+                            <div class="col-md-9">
+                                <select name="batch" class="form-control">
+                                    <option value="0">Select Batch</option>
+                                    <option value="Batch1">Batch1</option>
+                                    <option value="Batch2">Batch2</option>
+                                </select>
+                                <span class="help-block">Please select your Batch</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="confirmation_godate">Confirmation GO Date</label>
+                            <div class="col-md-9">
+                                <input type="date" class="form-control" name="confirmation_godate" placeholder="date">
+                                <span class="help-block">Please enter your Confirmation GO Date</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="confirmation_godate">Confirmation GO Date</label>
+                            <div class="col-md-9">
+                                <input type="date" class="form-control" name="confirmation_godate" placeholder="date">
+                                <span class="help-block">Please enter your Confirmation GO Date</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="confirmation_date">Confirmation Date</label>
+                            <div class="col-md-9">
+                                <input type="date" class="form-control" name="confirmation_date" placeholder="date">
+                                <span class="help-block">Please enter your Confirmation Date</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="expire_date">Expire Date</label>
+                            <div class="col-md-9">
+                                <input type="date" class="form-control" name="expire_date" placeholder="date">
+                                <span class="help-block">Please enter your Expire Date</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="national_seniority">National Seniority</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="national_seniority" readonly placeholder="Label">
+                                <span class="help-block">Please enter your National Seniority</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="status">Status</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="status" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Status</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="promote">Promote</label>
+                                <div class="col-md-9">
+                                    <select name="promote" class="form-control">
+                                        <option value="0">Select Promote</option>
+                                        <option value="Batch1">Batch1</option>
+                                        <option value="Batch2">Batch2</option>
+                                    </select>
+                                    <span class="help-block">Please select your Promote</span>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="codre">Codre</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="codre" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Codre</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="codre_date">Codre Date</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="codre_date" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Codre Date</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="activity_status">Activity Status</label>
+                            <div class="col-md-9">
+                                <select name="activity_status" class="form-control">
+                                    <option value="0">Select Activity Status</option>
+                                   <option value="Activity Status1">Activity Status 1</option>
+                                   <option value="Activity Status2">Activity Status 2</option>
+                                   <option value="Activity Status3">Activity Status 3</option>
+                                </select>
+                                <span class="help-block">Please select your Activity Status</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="placement">Placement</label>
+                            <div class="col-md-9">
+                                <select name="placement" class="form-control">
+                                    <option value="0">Select Placement</option>
+                                    <option value="Placement1">Placement 1</option>
+                                    <option value="Placement2">Placement 2</option>
+                                    <option value="Placement3">Placement 3</option>
+                                </select>
+                                <span class="help-block">Please select your Placement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="code">Code</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="code" readonly placeholder="Label">
+                                <span class="help-block">Please enter your Code</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="additional_personalinfo">Additional Personal Info</label>
+                            <div class="col-md-9">
+                                <textarea name="additional_personalinfo" rows="3" class="form-control" placeholder="Content.."></textarea>
+                                <span class="help-block">Please enter your Additional Personal Info</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="remarks">Remarks</label>
+                            <div class="col-md-9">
+                                <textarea name="remarks" rows="3" class="form-control" placeholder="Content.."></textarea>
+                                <span class="help-block">Please enter your Remarks</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </form>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-success float-right" type="submit">
+              <i class="fa fa-dot-circle-o"></i> Save
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form> 
+</div>
+
+
+    </tab>
+  </tabset>
+</div>

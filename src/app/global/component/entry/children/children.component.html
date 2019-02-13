@@ -2,7 +2,37 @@
   <tabset>
     <tab heading="Children" id="tab1">
  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab"> <div class="card-body">
-        <div class="row">
+                      
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Children</strong>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal" action="" method="post">							
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="remarks">Search By Employee Code</label>
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <input class="form-control" id="input2-group2" type="email" name="input2-group2" placeholder="Search By Employee Code">
+                                                <span class="input-group-append">
+                                                  <button class="btn btn-primary" type="button">Submit</button>
+                                                </span>
+                                              </div> 
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </form>
+                   </div>
+                </div>
+            </div>
+        </div>
+		 <div class="row">
           <div class="col-sm-12">
             <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
               <thead>
@@ -61,6 +91,10 @@
             </div>
           </div>
         </div>
+	</div>
+  
+
+                      
       </div></div>
 
     </tab>
@@ -76,124 +110,197 @@
             <strong>Children</strong>
           </div>
           <div class="card-body">
-           
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-sm-12 col-md-6">
+
+              </div>
+              <div class="col-sm-12 col-md-6">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-striped table-bordered datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="border-collapse: collapse !important">
+
+                  <tr>
+                    <th>Employee Code:</th>
+                    <td>
+                      <input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="DataTables_Table_0">
+                    </td>
+                    <th></th>
+                    <td> </td>
+                  </tr>
+
+                  <tr>
+                    <th>Name:</th>
+                    <td></td>
+                    <th>Rank:</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Designation:</th>
+                    <td></td>
+                    <th>Organisation:</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Location:</th>
+                    <td></td>
+                    <th>SPDB:</th>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            
+               <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Spouse</label>
+                    <div class="col-md-9">
+                  <select class="form-control" id="spouse" name="spouse">
+                    <option selected="selected">Select Spouse</option>
+                  </select>
+                        <span class="help-block">Please Select Spouse</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
+              <div class="row">
+             <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Image</label>
+                    <div class="col-md-9">
+                <input class="form-control" id="profilephoto" type="file" name="profileimage">
+                        <span class="help-block">Please Select Image</span>
+                  </div>
+                </div>
+                </div>
+
+              <div class="col-sm-6">
+
+              </div>
+            </div>
+
+               <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Child Serial</label>
+                    <div class="col-md-9">
+                  <input class="form-control" id="child_serial" name="child_serial" type="text" placeholder="Enter Child Serial">
+                        <span class="help-block">Please Enter Child Serial</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
+              <div class="row">
+              <div class="col-sm-6">
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="name">Name</label>
-                  <div class="col-md-9">
-                    <input formControlName="name" class="form-control" id="name" name="name" type="text" placeholder="Enter Name">
-                    <div *ngFor="let validation of validationMessages.name">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name', childrenForm)" >{{validation.message}}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-4">
-
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Name Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="name_native" class="form-control" id="name_native" name="name_native" type="text" placeholder="Enter Name Native">
-                    <div *ngFor="let validation of validationMessages.name_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'name_native', childrenForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Keyword</label>
-                  <div class="col-md-9">
-                    <input formControlName="keyword" class="form-control" id="keyword" name="keyword" type="text" placeholder="Enter Keyword">
-                    <div *ngFor="let validation of validationMessages.keyword">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'keyword', childrenForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation" class="form-control" id="abbreviation" name="abbreviation" type="text" placeholder="Enter Abbreviation">
-                    <div *ngFor="let validation of validationMessages.abbreviation">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation', childrenForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">Abbreviation Native</label>
-                  <div class="col-md-9">
-                    <input formControlName="abbreviation_native" class="form-control" id="abbreviation_native" name="abbreviation_native" type="text" placeholder="Enter Abbreviation Native">
-                    <div *ngFor="let validation of validationMessages.abbreviation_native">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'abbreviation_native', childrenForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="form-group row">
-                  <label class="col-md-3 col-form-label" for="name">SI No</label>
-                  <div class="col-md-9">
-                    <input formControlName="si_no" class="form-control" id="si_no" name="si_no" type="text" placeholder="Enter SI No">
-                    <div *ngFor="let validation of validationMessages.si_no">
-                      <span class="help-block" *ngIf="hasValidationError(validation, 'si_no', childrenForm)" >{{validation.message}}</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
-                  <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="name">IsActive</label>
                     <div class="col-md-9">
-                      <select formControlName="isActive" class="form-control" id="isActive" name="isActive">
-                        <option selected="selected">Select IsActive Type</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                      </select>
-                      <div *ngFor="let validation of validationMessages.isActive">
-                        <span class="help-block" *ngIf="hasValidationError(validation, 'isActive', childrenForm)" >{{validation.message}}</span>
-                    </div>
-                    </div>
+                  <input class="form-control" id="child_name" name="child_name" type="text" placeholder="Enter Name">
+                        <span class="help-block">Please Select Name</span>
                   </div>
                 </div>
-                <div class="col-sm-4">
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
                 </div>
               </div>
-            
+            </div>
+
+              <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Sex</label>
+                    <div class="col-md-9">
+                  <select class="form-control" id="child_sex" name="child_sex">
+                    <option selected="selected">Select Sex</option>
+                  </select>
+                        <span class="help-block">Please Select Sex</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Date of Birth</label>
+                    <div class="col-md-9">
+                  <input class="form-control" id="date_of_birth" name="date_of_birth" type="text" placeholder="Enter Date of Birth">
+                        <span class="help-block">Please Enter Date of Birth</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Birth Certificate</label>
+                    <div class="col-md-9">
+                  <input class="form-control" id="birth_certifcate" name="birth_certifcate" type="text" placeholder="Enter Birth Certificate">
+                        <span class="help-block">Please Enter Birth Certificate</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="name">Remarks</label>
+                    <div class="col-md-9">
+                  <input class="form-control" id="remarks" name="remarks" type="text" placeholder="Enter Remarks">
+                        <span class="help-block">Please Enter Remarks</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="card-footer">
-            <button class="btn btn-sm btn-success float-right" type="button" [disabled]="!childrenForm.valid" (click)="saveDocuments(childrenForm)">
-              <i class="fa fa-dot-circle-o"></i> Save
+            <button class="btn btn-sm btn-success float-right" type="submit">
+              <i class="fa fa-dot-circle-o"></i> Save & Process
             </button>
           </div>
         </div>
