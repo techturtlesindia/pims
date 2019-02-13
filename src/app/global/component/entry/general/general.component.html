@@ -100,7 +100,7 @@
 
     <tab heading="Create New">
 <div>
-<form [formGroup]="awardForm" class="form-horizontal">
+<form [formGroup]="generalForm" class="form-horizontal">
     <div class="row">
 
       <div class="col-sm-12">
@@ -299,7 +299,10 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="rank">Rank</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="rank" readonly placeholder="Label">
+                                    <select name="rank" class="form-control">
+                                            <option value="0">Select Rank</option>
+                                            <option value="rank1">rank 1</option>
+                                    </select>
                                 <span class="help-block">Please enter your Rank</span>
                             </div>
                         </div>
@@ -310,7 +313,10 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="designation">Designation</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="designation" readonly placeholder="Label">
+                                    <select name="designation" class="form-control">
+                                            <option value="0">Select designation</option>
+                                            <option value="designation1">designation 1</option>
+                                    </select>
                                 <span class="help-block">Please enter your Designation</span>
                             </div>
                         </div>
@@ -319,7 +325,10 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="location">Location</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="location" readonly placeholder="Label">
+                                    <select name="location" class="form-control">
+                                            <option value="0">Select location</option>
+                                            <option value="location1">location 1</option>
+                                    </select>
                                 <span class="help-block">Please enter your Location</span>
                             </div>
                         </div>
@@ -330,7 +339,10 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="organization">Organization</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="organization" readonly placeholder="Label">
+                                    <select name="organization" class="form-control">
+                                            <option value="0">Select organization</option>
+                                            <option value="organization1">organization 1</option>
+                                    </select>
                                 <span class="help-block">Please enter your Organization</span>
                             </div>
                         </div>
@@ -392,8 +404,12 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="noofspouse">No. of Spouse</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="noofspouse" readonly placeholder="Label">
-                                <span class="help-block">Please enter your No. of Spouse</span>
+                                    <select name="noofspouse" class="form-control">
+                                        <option value="0">Select no of spouse</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <span class="help-block">Please enter your No. of Spouse</span>
                             </div>
                         </div>
                     </div>
@@ -467,7 +483,11 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="status">Status</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="status" readonly placeholder="Label">
+                                    <select name="status" class="form-control">
+                                            <option value="0">Select status</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
                                 <span class="help-block">Please enter your Status</span>
                             </div>
                         </div>
@@ -491,8 +511,12 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="codre">Codre</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="codre" readonly placeholder="Label">
-                                <span class="help-block">Please enter your Codre</span>
+                                    <select name="codre" class="form-control">
+                                            <option value="0">Select codre</option>
+                                            <option value="Batch1">Batch1</option>
+                                            <option value="Batch2">Batch2</option>
+                                        </select>
+                                        <span class="help-block">Please enter your Codre</span>
                             </div>
                         </div>
                     </div>
@@ -541,8 +565,13 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="code">Code</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="code" readonly placeholder="Label">
-                                <span class="help-block">Please enter your Code</span>
+                                    <select name="code" class="form-control">
+                                            <option value="0">Select Placement</option>
+                                            <option value="Placement1">Placement 1</option>
+                                            <option value="Placement2">Placement 2</option>
+                                            <option value="Placement3">Placement 3</option>
+                                        </select>
+                                 <span class="help-block">Please enter your Code</span>
                             </div>
                         </div>
                     </div>
